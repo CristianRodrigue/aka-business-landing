@@ -1,7 +1,7 @@
 .section {
   position: relative;
   padding: 10rem 2rem;
-  background-color: var(--bg-absolute);
+  background-color: transparent;
   border-top: var(--border-surgical);
   display: flex;
   justify-content: center;

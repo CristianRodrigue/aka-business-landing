@@ -1,28 +1,55 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Hero3D.module.css";
 
 export default function SplineHero() {
   const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Lógica de Scroll Cinematográfico
+  const { scrollY } = useScroll();
+  
+  // Transformaciones lentas y suaves (Rango de 0 a 1000px de scroll)
+  const blurBase = useTransform(scrollY, [0, 1000], [0, 15]);
+  const opacityBase = useTransform(scrollY, [0, 800], [1, 0.4]);
+  const scaleBase = useTransform(scrollY, [0, 1000], [1, 1.05]);
+  
+  // Suavizado de los valores con Springs
+  const blur = useSpring(blurBase, { stiffness: 50, damping: 20 });
+  const opacity = useSpring(opacityBase, { stiffness: 50, damping: 20 });
+  const scale = useSpring(scaleBase, { stiffness: 50, damping: 20 });
 
   useEffect(() => {
-    // Simulamos un pequeño tiempo de carga para que la transición sea suave
     const timer = setTimeout(() => setIsLoaded(true), 1500);
     return () => clearTimeout(timer);
   }, []);
 
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section className={styles.heroContainer}>
-      <div className={styles.canvasWrapper} style={{ pointerEvents: 'auto' }}>
+      <motion.div 
+        className={styles.canvasWrapper} 
+        style={{ 
+          pointerEvents: 'auto',
+          filter: useTransform(blur, (v) => `blur(${v}px)`),
+          opacity: opacity,
+          scale: scale
+        }}
+      >
         <iframe 
           src="https://my.spline.design/thresholddarkambientui-rnfBdGM0Onq0uZhJCr0geFp7/"
           className={styles.iframeClipper}
           title="Threshold 3D Hero"
         />
         <div className={styles.badgeMask} />
-      </div>
+      </motion.div>
       
       <AnimatePresence>
         {!isLoaded && (
@@ -35,7 +62,6 @@ export default function SplineHero() {
         )}
       </AnimatePresence>
 
-      {/* UI de Alta Gama */}
       <AnimatePresence>
         {isLoaded && (
           <motion.div 
@@ -55,8 +81,15 @@ export default function SplineHero() {
             </div>
 
             <div className={styles.mainContent}>
-              {/* Contenido personalizado en el editor de Spline */}
+              {/* Contenido centrado */}
             </div>
+
+            {/* BOTÓN INVISIBLE: Mantenido fuera de cajas para control total */}
+            <button 
+              onClick={scrollToNext}
+              className={styles.invisibleAnchor}
+              aria-label="Join The Harvest"
+            />
 
             <div className={styles.bottomRow}>
               <div className={styles.specs}>
