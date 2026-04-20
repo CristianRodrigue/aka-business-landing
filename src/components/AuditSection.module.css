@@ -1,0 +1,95 @@
+.section {
+  position: relative;
+  padding: 10rem 2rem;
+  background-color: var(--bg-absolute);
+  border-top: var(--border-surgical);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.label {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: var(--text-dark);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 550px;
+}
+
+/* Investor Frame */
+.videoFrame {
+  position: relative;
+  background: #000;
+  border: var(--border-surgical);
+  padding: 1px;
+}
+
+.videoInner {
+  aspect-ratio: 16/9;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scanLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-10px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(300px); opacity: 0; }
+}
+
+.infoText {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

@@ -1,0 +1,205 @@
+.heroContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-absolute);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.canvasWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Sutil viñeta para centrar la atención */
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+  overflow: hidden; /* Crucial para el recorte */
+}
+
+.iframeClipper {
+  width: 112%; /* Recorte más agresivo */
+  height: 112%;
+  margin: -6% 0 0 -6%; 
+  border: none;
+  background: transparent;
+}
+
+.badgeMask {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 80px;
+  background: #000;
+  z-index: 10;
+  pointer-events: auto; /* IMPORTANTE: Aquí sí capturamos el clic para proteger el logo */
+  cursor: default;
+}
+
+/* El clickShield desaparece para permitir interacción real */
+
+/* Difuminado para fundir con la siguiente sección */
+.bottomFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35vh; /* Aumentado para máximo mimetismo */
+  background: linear-gradient(to bottom, transparent, #000 85%);
+  z-index: 6;
+  pointer-events: none;
+}
+
+.overlay {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  text-align: center;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statusLabel {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7D7D7D;
+  box-shadow: 0 0 10px rgba(125, 125, 125, 0.4);
+}
+
+.mainContent {
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: translateY(-2vh);
+}
+
+.title {
+  font-size: clamp(3rem, 12vw, 9rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--text-pure);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fff 0%, #777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.9;
+}
+
+.description {
+  max-width: 550px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 1.5rem;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.specs {
+  display: flex;
+  gap: 3.5rem;
+  text-align: left;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.specLabel {
+  font-family: var(--font-code);
+  font-size: 0.5rem;
+  color: #7D7D7D;
+  text-transform: uppercase;
+}
+
+.specValue {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: #CFCFCF;
+  font-weight: 500;
+}
+
+.tag {
+  padding: 0.7rem 1.4rem;
+  border: 1px solid rgba(207, 207, 207, 0.1);
+  border-radius: 2px;
+  font-family: var(--font-code);
+  font-size: 0.55rem;
+  color: #CFCFCF;
+  background: rgba(37, 37, 37, 0.4); /* #252525 */
+  letter-spacing: 0.2em;
+}
+
+.loader {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .overlay {
+    padding: 2rem 1.5rem;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+  .bottomRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .specs {
+    justify-content: center;
+    width: 100%;
+  }
+}

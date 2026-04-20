@@ -1,0 +1,89 @@
+.section {
+  padding: 10rem 2rem;
+  background-color: var(--bg-absolute);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.titleArea {
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--text-dark);
+  letter-spacing: 0.4em;
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-surface);
+  border: var(--border-surgical);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 480px;
+  transition: var(--transition-surgical);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: #050505;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cardIndex {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: var(--text-dark);
+  letter-spacing: 0.2em;
+}
+
+.cardIcon {
+  color: var(--text-pure);
+  opacity: 0.8;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .card {
+    height: 400px;
+  }
+}
