@@ -13,8 +13,31 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://akabusiness.tech'),
   title: "AKA Business | Digital Infrastructure",
   description: "Digital Infrastructure Engineering Firm for industrial sectors.",
+  openGraph: {
+    title: "AKA Business | Digital Infrastructure",
+    description: "Digital Infrastructure Engineering Firm for industrial sectors.",
+    url: "https://akabusiness.tech",
+    siteName: "AKA Business",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AKA Business | Digital Infrastructure Engineering",
+      },
+    ],
+    locale: "es_CO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AKA Business | Digital Infrastructure",
+    description: "Digital Infrastructure Engineering Firm for industrial sectors.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
