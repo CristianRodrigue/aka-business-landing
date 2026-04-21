@@ -42,17 +42,17 @@ export default function DiagnosticForm() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className={styles.header}>
-          <span className={styles.label}>// GATEWAY_AUTH</span>
-          <h2 className={styles.title}>START <br /> DIAGNOSTIC</h2>
+          <span className={styles.label}>// CONTACT_GATEWAY</span>
+          <h2 className={styles.title}>PROJECT <br /> INQUIRY</h2>
           <p className={styles.description}>
-            Restricted access for high-value industrial firms. 
-            Enter the parameters for the infrastructure audit.
+            Request official engagement or technical consultation. 
+            All requests are verified by our core engineering team.
           </p>
         </div>
 
         {success ? (
           <div className={styles.successMessage}>
-            // ACCESS_GRANTED. REQUEST ADDED TO THE PROCESSING QUEUE.
+            // MESSAGE_RECEIVED. OUR TEAM WILL REACH OUT SHORTLY via CORPORATE CHANNEL.
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -60,18 +60,8 @@ export default function DiagnosticForm() {
             <input type="hidden" name="access_key" value="d5e5c806-15f3-4949-adea-07065ce92625" />
             
             <div className={styles.formGroup}>
-              <label className={styles.fieldLabel}>TRAFFIC VOLUME (MONTHLY)</label>
-              <select className={styles.select} name="traffic" required defaultValue="">
-                <option value="" disabled>[ SELECT_RANGE ]</option>
-                <option value="<10k">&lt; 10,000</option>
-                <option value="10k-100k">10,000 - 100,000</option>
-                <option value=">100k">&gt; 100,000</option>
-              </select>
-            </div>
-
-            <div className={styles.formGroup}>
-              <label className={styles.fieldLabel}>TECH_STACK</label>
-              <input className={styles.input} type="text" name="stack" placeholder="Project Name / Stack..." required />
+              <label className={styles.fieldLabel}>FULL_NAME</label>
+              <input className={styles.input} type="text" name="name" placeholder="John Doe" required />
             </div>
 
             <div className={styles.formGroup}>
@@ -79,8 +69,23 @@ export default function DiagnosticForm() {
               <input className={styles.input} type="email" name="email" placeholder="id@company.com" required />
             </div>
 
+            <div className={styles.formGroup}>
+              <label className={styles.fieldLabel}>COMPANY_NAME</label>
+              <input className={styles.input} type="text" name="company" placeholder="Legal Entity..." required />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label className={styles.fieldLabel}>CONTACT_PHONE</label>
+              <input className={styles.input} type="tel" name="phone" placeholder="+00 000 0000 000" />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label className={styles.fieldLabel}>PROJECT_REQUIREMENTS</label>
+              <textarea className={styles.textarea} name="needs" placeholder="Briefly describe your objectives..." required />
+            </div>
+
             <button type="submit" className={styles.submitBtn} disabled={pending}>
-              {pending ? "PROCESSING..." : "SUBMIT_REQUEST"}
+              {pending ? "TRANSMITTING..." : "SEND_MESSAGE"}
             </button>
           </form>
         )}

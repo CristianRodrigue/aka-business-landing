@@ -60,7 +60,7 @@
   letter-spacing: 0.2em;
 }
 
-.input, .select {
+.input, .select, .textarea {
   background: transparent;
   border: none;
   border-bottom: 1px solid #1a1a1a;
@@ -69,11 +69,17 @@
   font-size: 1.2rem;
   padding: 1rem 0;
   transition: var(--transition-surgical);
+  width: 100%;
 }
 
-.input:focus, .select:focus {
+.input:focus, .select:focus, .textarea:focus {
   border-bottom-color: #fff;
   outline: none;
+}
+
+.textarea {
+  height: 100px;
+  resize: none;
 }
 
 .submitBtn {

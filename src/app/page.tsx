@@ -17,11 +17,12 @@ export default function Home() {
         position: 'relative',
         zIndex: 10,
         marginTop: '100vh',
-        background: 'rgba(5, 5, 5, 0.4)',
-        backdropFilter: 'blur(6px)',
-        WebkitBackdropFilter: 'blur(6px)',
+        background: 'rgba(5, 5, 5, 0.75)', /* Más opaco para compensar menos blur */
+        backdropFilter: 'blur(4px)', /* Reducido para performance en PC */
+        WebkitBackdropFilter: 'blur(4px)',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        boxShadow: '0 -20px 40px rgba(0,0,0,0.5)'
+        boxShadow: '0 -20px 40px rgba(0,0,0,0.5)',
+        willChange: 'transform, backdrop-filter'
       }}>
         <InfoCards />
         <AuditSection />
@@ -36,7 +37,17 @@ export default function Home() {
           fontFamily: 'var(--font-code)',
           letterSpacing: '0.2em'
         }}>
-          © 2024 AKA_BUSINESS // ALL_RIGHTS_RESERVED // DIGITAL_INFRASTRUCTURE_GEN_V.1
+          <div>© 2026 AKA_BUSINESS // ALL_RIGHTS_RESERVED // DIGITAL_INFRASTRUCTURE_GEN_V.1</div>
+          <div style={{ marginTop: '1.5rem' }}>
+            <a 
+              href="https://www.linkedin.com/in/christian-camilo-dev/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--text-muted)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}
+            >
+              [ CONNECT_VIA_LINKEDIN ]
+            </a>
+          </div>
         </footer>
       </div>
     </main>

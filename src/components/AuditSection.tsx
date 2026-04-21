@@ -32,7 +32,7 @@ export default function AuditSection() {
         >
           <div className={styles.videoInner}>
             <div className={styles.scanLine} />
-            <span className={styles.infoText}>97_SCORE_VERIFIED: 2024</span>
+            <span className={styles.infoText}>97_SCORE_VERIFIED: 2026</span>
           </div>
         </motion.div>
       </div>

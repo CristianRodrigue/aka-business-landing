@@ -1,29 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Hero3D.module.css";
 
+// Carga directa y optimizada de Spline
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+  loading: () => <div className={styles.loader} />
+});
+
 export default function SplineHero() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const splineApp = useRef<any>(null);
   
-  // Lógica de Scroll Cinematográfico
   const { scrollY } = useScroll();
   
-  // Transformaciones lentas y suaves (Rango de 0 a 1000px de scroll)
   const blurBase = useTransform(scrollY, [0, 1000], [0, 15]);
   const opacityBase = useTransform(scrollY, [0, 800], [1, 0.4]);
   const scaleBase = useTransform(scrollY, [0, 1000], [1, 1.05]);
   
-  // Suavizado de los valores con Springs
-  const blur = useSpring(blurBase, { stiffness: 50, damping: 20 });
-  const opacity = useSpring(opacityBase, { stiffness: 50, damping: 20 });
-  const scale = useSpring(scaleBase, { stiffness: 50, damping: 20 });
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+  const blur = useSpring(blurBase, { stiffness: 40, damping: 25 });
+  const opacity = useSpring(opacityBase, { stiffness: 40, damping: 25 });
+  const scale = useSpring(scaleBase, { stiffness: 40, damping: 25 });
 
   const scrollToNext = () => {
     window.scrollTo({
@@ -32,21 +32,32 @@ export default function SplineHero() {
     });
   };
 
+  function onLoad(spline: any) {
+    splineApp.current = spline;
+    setIsLoaded(true);
+  }
+
   return (
     <section className={styles.heroContainer}>
       <motion.div 
         className={styles.canvasWrapper} 
         style={{ 
-          pointerEvents: 'auto',
           filter: useTransform(blur, (v) => `blur(${v}px)`),
           opacity: opacity,
-          scale: scale
+          scale: scale,
+          zIndex: 50, // Lo subimos para que reciba el clic sí o sí
+          pointerEvents: 'auto'
         }}
+        onMouseDown={scrollToNext} // Clic de respaldo en todo el contenedor
       >
-        <iframe 
-          src="https://my.spline.design/thresholddarkambientui-rnfBdGM0Onq0uZhJCr0geFp7/"
-          className={styles.iframeClipper}
-          title="Threshold 3D Hero"
+        <Spline 
+          scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
+          onLoad={onLoad}
+          onMouseDown={(e: any) => {
+            console.log("OBJ_CLICK:", e.target.name);
+            // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
+            scrollToNext(); 
+          }}
         />
         <div className={styles.badgeMask} />
       </motion.div>
@@ -81,15 +92,8 @@ export default function SplineHero() {
             </div>
 
             <div className={styles.mainContent}>
-              {/* Contenido centrado */}
+               {/* Centro - El clic ocurre dentro del componente Spline */}
             </div>
-
-            {/* BOTÓN INVISIBLE: Mantenido fuera de cajas para control total */}
-            <button 
-              onClick={scrollToNext}
-              className={styles.invisibleAnchor}
-              aria-label="Join The Harvest"
-            />
 
             <div className={styles.bottomRow}>
               <div className={styles.specs}>
