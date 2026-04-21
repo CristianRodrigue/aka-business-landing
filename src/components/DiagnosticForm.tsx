@@ -61,7 +61,7 @@ export default function DiagnosticForm() {
             
             <div className={styles.formGroup}>
               <label className={styles.fieldLabel}>FULL_NAME</label>
-              <input className={styles.input} type="text" name="name" placeholder="John Doe" required />
+              <input className={styles.input} type="text" name="name" placeholder="[ CLIENT_NAME / COMPANY_NAME ]" required />
             </div>
 
             <div className={styles.formGroup}>
@@ -76,7 +76,7 @@ export default function DiagnosticForm() {
 
             <div className={styles.formGroup}>
               <label className={styles.fieldLabel}>CONTACT_PHONE</label>
-              <input className={styles.input} type="tel" name="phone" placeholder="+00 000 0000 000" />
+              <input className={styles.input} type="tel" name="phone" placeholder="[ TECHNICAL_CONTACT_NUMBER ]" />
             </div>
 
             <div className={styles.formGroup}>
