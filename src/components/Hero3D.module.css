@@ -62,7 +62,7 @@
 
 .overlay {
   position: relative;
-  z-index: 10;
+  z-index: 150; /* Por encima de todo para que sea visible al inicio */
   width: 100%;
   max-width: 1400px;
   height: 100%;

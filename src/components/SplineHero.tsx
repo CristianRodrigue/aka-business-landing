@@ -14,16 +14,20 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
 export default function SplineHero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const splineApp = useRef<any>(null);
-  
+
   const { scrollY } = useScroll();
-  
+
   const blurBase = useTransform(scrollY, [0, 1000], [0, 15]);
   const opacityBase = useTransform(scrollY, [0, 800], [1, 0.4]);
   const scaleBase = useTransform(scrollY, [0, 1000], [1, 1.05]);
-  
+
+  // Transformación inversa para el HUD (Empieza visible, se oculta al bajar)
+  const uiOpacityBase = useTransform(scrollY, [0, 300], [1, 0]);
+
   const blur = useSpring(blurBase, { stiffness: 40, damping: 25 });
   const opacity = useSpring(opacityBase, { stiffness: 40, damping: 25 });
   const scale = useSpring(scaleBase, { stiffness: 40, damping: 25 });
+  const uiOpacity = useSpring(uiOpacityBase, { stiffness: 40, damping: 25 });
 
   const scrollToNext = () => {
     window.scrollTo({
@@ -39,9 +43,9 @@ export default function SplineHero() {
 
   return (
     <section className={styles.heroContainer}>
-      <motion.div 
-        className={styles.canvasWrapper} 
-        style={{ 
+      <motion.div
+        className={styles.canvasWrapper}
+        style={{
           filter: useTransform(blur, (v) => `blur(${v}px)`),
           opacity: opacity,
           scale: scale,
@@ -50,18 +54,18 @@ export default function SplineHero() {
         }}
         onMouseDown={scrollToNext} // Clic de respaldo en todo el contenedor
       >
-        <Spline 
+        <Spline
           scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
           onLoad={onLoad}
           onMouseDown={(e: any) => {
             console.log("OBJ_CLICK:", e.target.name);
             // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
-            scrollToNext(); 
+            scrollToNext();
           }}
         />
         <div className={styles.badgeMask} />
       </motion.div>
-      
+
       <AnimatePresence>
         {!isLoaded && (
           <div className={styles.loader}>
@@ -75,10 +79,11 @@ export default function SplineHero() {
 
       <AnimatePresence>
         {isLoaded && (
-          <motion.div 
+          <motion.div
             className={styles.overlay}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            style={{ opacity: uiOpacity }}
             transition={{ duration: 1.5 }}
           >
             <div className={styles.topRow}>
@@ -92,18 +97,18 @@ export default function SplineHero() {
             </div>
 
             <div className={styles.mainContent}>
-               {/* Centro - El clic ocurre dentro del componente Spline */}
+              {/* Centro - El clic ocurre dentro del componente Spline */}
             </div>
 
             <div className={styles.bottomRow}>
               <div className={styles.specs}>
                 <div className={styles.specItem}>
-                  <span className={styles.specLabel}>Interface</span>
-                  <span className={styles.specValue}>Stable_Universal_Viewer</span>
+                  {/*<span className={styles.specLabel}>Interface</span>
+                  <span className={styles.specValue}>Stable_Universal_Viewer</span>}
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specLabel}>Status</span>
-                  <span className={styles.specValue}>Verified_High_Fidelity</span>
+                  {/*<span className={styles.specLabel}>Status</span>*/}
+                  {/*<span className={styles.specValue}>Verified_High_Fidelity</span>*/}
                 </div>
               </div>
             </div>
