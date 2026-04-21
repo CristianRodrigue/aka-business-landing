@@ -38,7 +38,10 @@ export default function SplineHero() {
 
   function onLoad(spline: any) {
     splineApp.current = spline;
-    setIsLoaded(true);
+    // Pequeño retraso para que el navegador respire después de cargar el motor
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
   }
 
   return (
