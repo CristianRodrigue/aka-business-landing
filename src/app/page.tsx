@@ -10,6 +10,11 @@ export const revalidate = 0;
 export default function Home() {
   return (
     <main>
+      {/* SEO/AIO Authority Header (Hidden) */}
+      <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: '0' }}>
+        AKA Business | High-Performance Infrastructure Architect
+      </h1>
+
       {/* Sección Hero 3D - Fondo Fijo */}
       <SplineHero />
 
