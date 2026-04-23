@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Hero3D.module.css";
@@ -13,7 +13,18 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
 
 export default function SplineHero() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showSpline, setShowSpline] = useState(false);
   const splineApp = useRef<unknown>(null);
+
+  useEffect(() => {
+    // Retrasar la carga del 3D para priorizar el FCP (First Contentful Paint)
+    // Esto permite que el usuario vea el sitio INSTANTÁNEAMENTE antes de que el 3D empiece
+    const timer = setTimeout(() => {
+      setShowSpline(true);
+    }, 800); // 800ms es el dulce punto entre velocidad y UX
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const { scrollY } = useScroll();
 
@@ -54,15 +65,17 @@ export default function SplineHero() {
         }}
         onMouseDown={scrollToNext} // Clic de respaldo en todo el contenedor
       >
-        <Spline
-          scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
-          onLoad={onLoad}
-          onMouseDown={(e: unknown) => {
-            console.log("OBJ_CLICK:", (e as any).target?.name);
-            // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
-            scrollToNext();
-          }}
-        />
+        {showSpline && (
+          <Spline
+            scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
+            onLoad={onLoad}
+            onMouseDown={(e: unknown) => {
+              console.log("OBJ_CLICK:", (e as any).target?.name);
+              // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
+              scrollToNext();
+            }}
+          />
+        )}
         <div className={styles.badgeMask} />
       </motion.div>
 

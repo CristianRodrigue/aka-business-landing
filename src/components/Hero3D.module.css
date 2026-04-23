@@ -4,13 +4,14 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--bg-absolute);
+  background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   z-index: 1;
+  contain: paint;
 }
 
 .canvasWrapper {
@@ -130,7 +131,6 @@
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 1.5rem;
 }
-
 .bottomRow {
   display: flex;
   justify-content: space-between;
