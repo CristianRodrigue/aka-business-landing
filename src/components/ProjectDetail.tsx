@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { X, Cpu, Server, Activity } from "lucide-react";
 import styles from "./ProjectDetail.module.css";
 import { Project } from "./SystemShowcase";
@@ -42,7 +43,31 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
               />
             </div>
             <div className={styles.imageGrid}>
-              <div className={styles.imagePlaceholder}>[ DATA_VIZ_RENDER ]</div>
+              {project.fullDetails.pagespeedImg ? (
+                <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+                  <Image 
+                    src={project.fullDetails.pagespeedImg} 
+                    alt="PageSpeed Performance Report" 
+                    fill
+                    style={{ objectFit: 'cover', opacity: 0.7 }} 
+                  />
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '10px', 
+                    left: '10px', 
+                    background: 'rgba(0,0,0,0.8)', 
+                    padding: '4px 8px', 
+                    fontSize: '0.5rem', 
+                    fontFamily: 'var(--font-code)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    zIndex: 2
+                  }}>
+                    [ PERFORMANCE_REPORT_SNAPSHOT ]
+                  </div>
+                </div>
+              ) : (
+                <div className={styles.imagePlaceholder}>[ DATA_VIZ_RENDER ]</div>
+              )}
               <div className={styles.imagePlaceholder}>[ AUDIT_LOG_SNAPSHOT ]</div>
             </div>
           </div>

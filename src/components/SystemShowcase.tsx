@@ -18,6 +18,7 @@ export interface Project {
     stack: string[];
     metrics: { label: string; value: string }[];
     videoUrl?: string;
+    pagespeedImg?: string;
   };
 }
 
@@ -37,7 +38,8 @@ const projects: Project[] = [
         { label: "TTFB", value: "0.2ms" },
         { label: "Availability", value: "99.99%" }
       ],
-      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784658/2026-04-19_09-37-07_gt80kb.mp4"
+      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784658/2026-04-19_09-37-07_gt80kb.mp4",
+      pagespeedImg: "/pagespeed/pagespeed-demo-desktop.jpeg"
     }
   },
   {
@@ -56,7 +58,8 @@ const projects: Project[] = [
         { label: "Asset Delivery", value: "Secure_Signed" },
         { label: "Platform Fees", value: "0%" }
       ],
-      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776786210/2026-04-19_09-48-08_-_Compressed_with_FlexClip_idkpxu.mp4"
+      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776786210/2026-04-19_09-48-08_-_Compressed_with_FlexClip_idkpxu.mp4",
+      pagespeedImg: "/pagespeed/pagespeed-akasounds-page.jpg"
     }
   },
   {
@@ -74,7 +77,8 @@ const projects: Project[] = [
         { label: "Design Level", value: "Industrial" },
         { label: "Latency", value: "Sub-second" }
       ],
-      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784661/2026-04-16_18-01-05_rccyc2.mp4"
+      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784661/2026-04-16_18-01-05_rccyc2.mp4",
+      pagespeedImg: "/pagespeed/pagespeed-p4p-page.jpg"
     }
   }
 ];

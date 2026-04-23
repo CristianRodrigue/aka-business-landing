@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./FounderSection.module.css";
 
 export default function FounderSection() {
@@ -14,7 +15,14 @@ export default function FounderSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <img src="/founder.jpg" alt="Christian Camilo - Founding Architect" />
+          <Image 
+            src="/founder.jpg" 
+            alt="Christian Camilo - Founding Architect" 
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }}
+            priority
+          />
           <div className={styles.overlay} />
         </motion.div>
 
@@ -27,7 +35,7 @@ export default function FounderSection() {
         >
           <span className={styles.label}>[ FOUNDING_ARCHITECT_LOG ]</span>
           <h2 className={styles.quote}>
-            "INFRASTRUCTURE IS NOT JUST CODE. IT IS THE NERVOUS SYSTEM OF MODERN INDUSTRY."
+            "SOLID INFRASTRUCTURE. FLYING IDEAS. ALL IN ONE PLACE."
           </h2>
           <p className={styles.bio}>
             Specialized in engineering high-performance digital ecosystems for the 0.1% of industrial firms. 

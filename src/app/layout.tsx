@@ -53,6 +53,13 @@ export const metadata: Metadata = {
     description: "Specialized Digital Infrastructure Engineering Firm. High-performance architecture by Christian Camilo.",
     images: ["/opengraph-image.png"],
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '32x32' },
+      { url: '/icon.png', sizes: 'any' },
+    ],
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
