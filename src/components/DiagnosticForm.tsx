@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { submitDiagnostic } from "@/app/actions";
+
 import styles from "./DiagnosticForm.module.css";
 
 export default function DiagnosticForm() {
@@ -42,7 +42,7 @@ export default function DiagnosticForm() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className={styles.header}>
-          <span className={styles.label}>// CONTACT_GATEWAY</span>
+          <span className={styles.label}>{'// CONTACT_GATEWAY'}</span>
           <h2 className={styles.title}>PROJECT <br /> INQUIRY</h2>
           <p className={styles.description}>
             Request official engagement or technical consultation. 
@@ -52,7 +52,7 @@ export default function DiagnosticForm() {
 
         {success ? (
           <div className={styles.successMessage}>
-            // MESSAGE_RECEIVED. OUR TEAM WILL REACH OUT SHORTLY via CORPORATE CHANNEL.
+            {'// MESSAGE_RECEIVED. OUR TEAM WILL REACH OUT SHORTLY via CORPORATE CHANNEL.'}
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit}>

@@ -82,17 +82,17 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
             </div>
 
             <div className={styles.infoSection}>
-              <span className={styles.sectionTitle}>// THE_CHALLENGE</span>
+              <span className={styles.sectionTitle}>{'// THE_CHALLENGE'}</span>
               <p className={styles.text}>{project.fullDetails.problem}</p>
             </div>
 
             <div className={styles.infoSection}>
-              <span className={styles.sectionTitle}>// ARCHITECTURAL_SOLUTION</span>
+              <span className={styles.sectionTitle}>{'// ARCHITECTURAL_SOLUTION'}</span>
               <p className={styles.text}>{project.fullDetails.solution}</p>
             </div>
 
             <div className={styles.infoSection}>
-              <span className={styles.sectionTitle}>// ENGINEERING_STACK</span>
+              <span className={styles.sectionTitle}>{'// ENGINEERING_STACK'}</span>
               <div className={styles.stack}>
                 {project.fullDetails.stack.map(tech => (
                   <span key={tech} className={styles.techTag}>{tech}</span>
@@ -110,7 +110,7 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
             </div>
 
             <div className={styles.infoSection}>
-              <span className={styles.sectionTitle}>// NODE_INFRASTRUCTURE</span>
+              <span className={styles.sectionTitle}>{'// NODE_INFRASTRUCTURE'}</span>
               <div style={{ 
                 height: "80px", 
                 border: "1px dashed rgba(255,255,255,0.1)", 

@@ -49,7 +49,7 @@ export default function Home() {
           
           <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center', gap: '2rem', alignItems: 'center' }}>
             <a 
-              href="https://www.linkedin.com/in/christian-camilo-dev/" 
+              href="https://www.linkedin.com/in/christian-camilo-dev" 
               target="_blank" 
               rel="noopener noreferrer"
               className="footerLink"

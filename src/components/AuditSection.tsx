@@ -14,7 +14,7 @@ export default function AuditSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className={styles.label}>// ARCHITECTURAL_AUDIT</span>
+          <span className={styles.label}>{'// ARCHITECTURAL_AUDIT'}</span>
           <h2 className={styles.headline}>PERFORMANCE <br /> ENGINEERING</h2>
           <p className={styles.description}>
             Comprehensive infrastructure audits to ensure the technological 

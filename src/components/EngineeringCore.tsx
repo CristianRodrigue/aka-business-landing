@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, MeshWobbleMaterial, PerspectiveCamera, Stars, Text, Environment } from '@react-three/drei';
+import { Float, MeshDistortMaterial, PerspectiveCamera, Stars, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
 function Monolith() {
@@ -77,7 +77,7 @@ function Monolith() {
 }
 
 function DataParticles({ count = 200 }) {
-  const points = useMemo(() => {
+  const [points] = React.useState(() => {
     const p = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
         p[i * 3] = (Math.random() - 0.5) * 15;
@@ -85,11 +85,11 @@ function DataParticles({ count = 200 }) {
         p[i * 3 + 2] = (Math.random() - 0.5) * 15;
     }
     return p;
-  }, [count]);
+  });
 
   const particlesRef = useRef<THREE.Points>(null!);
 
-  useFrame((state) => {
+  useFrame(() => {
     particlesRef.current.rotation.y += 0.001;
     particlesRef.current.rotation.x += 0.0005;
   });

@@ -51,7 +51,7 @@ export default function InfoCards() {
   return (
     <section className={styles.section}>
       <div className={styles.titleArea}>
-        <p className={styles.subtitle}>// CORE_PROPOSITION</p>
+        <p className={styles.subtitle}>{'// CORE_PROPOSITION'}</p>
         <h2 className={styles.headline}>PILLARS OF AUTHORITY</h2>
       </div>
       

@@ -110,3 +110,23 @@
     margin: 0 auto;
   }
 }
+
+.socialLinks {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.socialIcon {
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialIcon:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}

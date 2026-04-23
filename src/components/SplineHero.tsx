@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Hero3D.module.css";
@@ -13,7 +13,7 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
 
 export default function SplineHero() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const splineApp = useRef<any>(null);
+  const splineApp = useRef<unknown>(null);
 
   const { scrollY } = useScroll();
 
@@ -34,7 +34,7 @@ export default function SplineHero() {
     });
   };
 
-  function onLoad(spline: any) {
+  function onLoad(spline: unknown) {
     splineApp.current = spline;
     // Pequeño retraso para que el navegador respire después de cargar el motor
     setTimeout(() => {
@@ -57,7 +57,7 @@ export default function SplineHero() {
         <Spline
           scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
           onLoad={onLoad}
-          onMouseDown={(e: any) => {
+          onMouseDown={(e: unknown) => {
             console.log("OBJ_CLICK:", e.target.name);
             // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
             scrollToNext();

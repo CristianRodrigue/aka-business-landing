@@ -30,7 +30,7 @@ export default function OperationalMethodology() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <span className={styles.label}>[ OPERATIONAL_METHODOLOGY_V1.0 ]</span>
+        <span className={styles.label}>{'// EXECUTION_PROTOCOLS'}</span>
         <div className={styles.grid}>
           {STEPS.map((step, idx) => (
             <motion.div 
@@ -41,7 +41,7 @@ export default function OperationalMethodology() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
-              <span className={styles.stepNumber}>// STEP_{step.num}</span>
+              <span className={styles.stepNumber}>{`// STEP_${step.num}`}</span>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepDesc}>{step.desc}</p>
             </motion.div>
