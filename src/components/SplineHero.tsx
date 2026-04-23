@@ -58,7 +58,7 @@ export default function SplineHero() {
           scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
           onLoad={onLoad}
           onMouseDown={(e: unknown) => {
-            console.log("OBJ_CLICK:", e.target.name);
+            console.log("OBJ_CLICK:", (e as any).target?.name);
             // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
             scrollToNext();
           }}
