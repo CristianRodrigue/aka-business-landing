@@ -34,8 +34,8 @@ export default function FounderSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span className={styles.label}>[ FOUNDING_ARCHITECT_LOG ]</span>
-          <h2 className={styles.title}>
-            &quot;INFRAESTRUCTURA SÓLIDA. IDEAS QUE VUELAN. TODO EN EL MISMO SITIO.&quot;
+          <h2 className={styles.quote}>
+            &quot;SOLID INFRASTRUCTURE. FLYING IDEAS. ALL IN ONE PLACE.&quot;
           </h2>
           <p className={styles.bio}>
             Specialized in engineering high-performance digital ecosystems for the 0.1% of industrial firms. 
