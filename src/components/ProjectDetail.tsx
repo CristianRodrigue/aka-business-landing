@@ -42,8 +42,6 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
               />
             </div>
             <div className={styles.imageGrid}>
-              <div className={styles.imagePlaceholder}>[ ANALYSIS_MODULE_01 ]</div>
-              <div className={styles.imagePlaceholder}>[ ANALYSIS_MODULE_02 ]</div>
               <div className={styles.imagePlaceholder}>[ DATA_VIZ_RENDER ]</div>
               <div className={styles.imagePlaceholder}>[ AUDIT_LOG_SNAPSHOT ]</div>
             </div>

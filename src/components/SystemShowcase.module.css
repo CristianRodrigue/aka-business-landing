@@ -67,6 +67,7 @@
   flex-direction: column;
   gap: 2rem;
   height: auto;
+  cursor: pointer;
 }
 
 .specialCard {
@@ -90,9 +91,19 @@
 }
 
 .card:hover {
-  background: #050505;
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  border-color: #ffffff;
   transform: translateY(-5px);
+}
+
+.card:hover .projectTitle,
+.card:hover .description {
+  color: #000000;
+}
+
+.card:hover .metric {
+  color: #333333;
+  border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 .projectTitle {

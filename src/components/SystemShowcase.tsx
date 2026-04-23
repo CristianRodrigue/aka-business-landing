@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./SystemShowcase.module.css";
 import ProjectDetail from "./ProjectDetail";
@@ -82,6 +82,18 @@ const projects: Project[] = [
 export default function SystemShowcase() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selectedProject = projects.find(p => p.id === selectedId);
+
+  // Bloqueo de scroll al abrir el detalle
+  useEffect(() => {
+    if (selectedId) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedId]);
 
   return (
     <section className={styles.section}>

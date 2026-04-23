@@ -17,14 +17,12 @@ export default function SplineHero() {
 
   const { scrollY } = useScroll();
 
-  const blurBase = useTransform(scrollY, [0, 1000], [0, 15]);
   const opacityBase = useTransform(scrollY, [0, 800], [1, 0.4]);
   const scaleBase = useTransform(scrollY, [0, 1000], [1, 1.05]);
 
   // Transformación inversa para el HUD (Empieza visible, se oculta al bajar)
   const uiOpacityBase = useTransform(scrollY, [0, 300], [1, 0]);
 
-  const blur = useSpring(blurBase, { stiffness: 40, damping: 25 });
   const opacity = useSpring(opacityBase, { stiffness: 40, damping: 25 });
   const scale = useSpring(scaleBase, { stiffness: 40, damping: 25 });
   const uiOpacity = useSpring(uiOpacityBase, { stiffness: 40, damping: 25 });
@@ -49,7 +47,6 @@ export default function SplineHero() {
       <motion.div
         className={styles.canvasWrapper}
         style={{
-          filter: useTransform(blur, (v) => `blur(${v}px)`),
           opacity: opacity,
           scale: scale,
           zIndex: 50, // Lo subimos para que reciba el clic sí o sí

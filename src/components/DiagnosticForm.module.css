@@ -84,19 +84,20 @@
 
 .submitBtn {
   margin-top: 2rem;
-  background: #fff;
-  color: #000;
-  border: none;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
   padding: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.4em;
   cursor: pointer;
-  transition: var(--transition-surgical);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .submitBtn:hover {
-  background: #cccccc;
+  background: transparent;
+  color: #ffffff;
 }
 
 .submitBtn:disabled {

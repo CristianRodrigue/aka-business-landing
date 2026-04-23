@@ -1,0 +1,75 @@
+.section {
+  padding: 10rem 2rem;
+  background-color: transparent;
+  border-top: var(--border-surgical);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: var(--text-dark);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.step:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-left-color: #fff;
+}
+
+.stepNumber {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

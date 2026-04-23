@@ -2,6 +2,8 @@ import SplineHero from "@/components/SplineHero";
 import InfoCards from "@/components/InfoCards";
 import AuditSection from "@/components/AuditSection";
 import SystemShowcase from "@/components/SystemShowcase";
+import OperationalMethodology from "@/components/OperationalMethodology";
+import FounderSection from "@/components/FounderSection";
 import DiagnosticForm from "@/components/DiagnosticForm";
 
 export const dynamic = 'force-dynamic';
@@ -23,16 +25,15 @@ export default function Home() {
         position: 'relative',
         zIndex: 10,
         marginTop: '100vh',
-        background: 'rgba(5, 5, 5, 0.75)', /* Más opaco para compensar menos blur */
-        backdropFilter: 'blur(4px)', /* Reducido para performance en PC */
-        WebkitBackdropFilter: 'blur(4px)',
+        background: 'rgba(5, 5, 5, 0.98)', /* Fondo casi sólido para máximo rendimiento */
         borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        boxShadow: '0 -20px 40px rgba(0,0,0,0.5)',
-        willChange: 'transform, backdrop-filter'
+        boxShadow: '0 -20px 40px rgba(0,0,0,0.5)'
       }}>
         <InfoCards />
         <AuditSection />
         <SystemShowcase />
+        <OperationalMethodology />
+        <FounderSection />
         <DiagnosticForm />
 
         <footer style={{

@@ -195,21 +195,22 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #000000;
   font-family: var(--font-code);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .deployLink:hover {
-  border-color: #fff;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 @media (max-width: 1024px) {
