@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lighthouse & temporary reports
+*.report.html
+.lighthousert/
+
+# scratch
+scratch/
