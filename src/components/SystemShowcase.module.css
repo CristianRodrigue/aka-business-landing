@@ -159,30 +159,23 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .section {
-    padding: 6rem 1.5rem;
-  }
-}
-
-.card:hover::after {
-  opacity: 1;
-}
-
-@keyframes scanline {
-  0% { top: 0; }
-  100% { top: 100%; }
-}
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
   .section {
     padding: 6rem 1.5rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .projectTitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .description {
+    font-size: 0.75rem;
   }
 }

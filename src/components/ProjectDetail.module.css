@@ -214,21 +214,76 @@
 }
 
 @media (max-width: 1024px) {
+  .overlay {
+    padding: 1rem;
+  }
+
+  .cardExpanded {
+    height: 98vh;
+    border-radius: 8px;
+  }
+
   .content {
     grid-template-columns: 1fr;
-  }
-  
-  .detailsCol {
-    padding: 2rem;
-  }
-  
-  .cardExpanded {
-    height: 95vh;
+    overflow-y: auto;
   }
   
   .mediaCol {
-    height: 300px;
+    height: auto;
+    min-height: 200px;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex: none;
+  }
+
+  .videoWrapper {
+    aspect-ratio: 16/9;
+  }
+
+  .imageGrid {
+    display: none; /* Quitamos los cuadros en móvil para dar aire */
+  }
+  
+  .detailsCol {
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    overflow-y: visible; /* El scroll lo maneja .content en móvil */
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .projectTitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  .deployLink {
+    padding: 1rem;
+    font-size: 0.6rem;
   }
 }
