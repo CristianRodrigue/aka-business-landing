@@ -157,6 +157,11 @@
 }
 
 @media (max-width: 1024px) {
+  .title {
+    font-size: 1.8rem;
+    word-break: break-word;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
