@@ -1,0 +1,489 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--bg-absolute);
+  color: var(--text-pure);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+}
+
+.backButton {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 100;
+  transition: var(--transition-surgical);
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+}
+
+.backButton:hover {
+  color: var(--text-pure);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Header Section */
+.header {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+}
+
+.photoSection {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footerPhotoWrapper {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  background: #0a0a0a;
+  max-width: 400px;
+}
+
+.footerPhoto {
+  filter: grayscale(100%) contrast(1.1);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 5rem;
+}
+
+.sectionLabel {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: var(--text-dark);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--text-dark);
+  padding-left: 1rem;
+}
+
+.summaryText {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.5;
+  color: #eee;
+  max-width: 800px;
+}
+
+/* Experience Grid */
+.experienceItem {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.period {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.role {
+  font-size: 0.9rem;
+  color: var(--text-pure);
+  font-weight: 600;
+}
+
+.description {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.achievements {
+  margin-top: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.achievements li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.achievements li::before {
+  content: "»";
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Tech Stack */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem;
+}
+
+.techCategory h3 {
+  font-size: 0.8rem;
+  color: var(--text-pure);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.techTag {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  transition: var(--transition-surgical);
+}
+
+.techTag:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #1a1a1a;
+}
+
+/* Credentials */
+.credentialsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.credentialCard {
+  background: #050505;
+  border: 1px solid #111;
+  padding: 2rem;
+  transition: var(--transition-surgical);
+}
+
+.credentialCard:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.credType {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.credTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.credIssuer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactLabel {
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  color: var(--text-dark);
+}
+
+.contactValue {
+  font-size: 1rem;
+  color: var(--text-pure);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-surgical);
+}
+
+.contactValue:hover {
+  color: var(--chrome-dim);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-surgical);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  stroke-width: 1.5;
+}
+
+.socialIcon:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experienceItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .credentialsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header {
+    padding-top: 4rem;
+  }
+  
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    background: #000;
+  }
+
+  .headerContent {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.downloadSection {
+  margin-top: 8rem;
+  border-top: 1px solid #111;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.downloadBtn {
+  background: #fff;
+  color: #000;
+  padding: 1.5rem 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition-surgical);
+}
+
+.downloadBtn:hover {
+  background: #ccc;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* PRINT OPTIMIZATION */
+@media print {
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  :global(body), :global(html) {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+
+  .page {
+    padding: 0 !important;
+    background-color: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 1rem 2rem !important;
+  }
+
+  .backButton, .downloadSection {
+    display: none !important;
+  }
+
+  .header {
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
+  .footerPhotoWrapper {
+    background: #fff !important;
+    border: 1px solid #000 !important;
+    padding: 5px !important;
+    max-width: 250px !important;
+    margin: 0 auto !important;
+  }
+
+  .footerPhoto {
+    filter: grayscale(100%) contrast(1.2) !important;
+  }
+
+  .section {
+    margin-bottom: 0.8rem !important;
+    page-break-inside: avoid;
+  }
+
+  .sectionLabel {
+    color: #000 !important;
+    border-left-color: #000 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .experienceItem {
+    margin-bottom: 0.8rem !important;
+    grid-template-columns: 140px 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .name {
+    font-size: 2.5rem !important;
+    color: #000 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .summaryText {
+    font-size: 1rem !important;
+    color: #333 !important;
+  }
+
+  .techGrid {
+    gap: 1rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .techTag {
+    background: #f0f0f0 !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+
+  .credentialsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+  }
+
+  .credentialCard {
+    padding: 0.8rem !important;
+    background: #fff !important;
+    border: 1px solid #eee !important;
+  }
+
+  .credTitle, .company, .role, .name, .title {
+    color: #000 !important;
+  }
+  
+  .description, .summaryText, .contactValue {
+    color: #222 !important;
+  }
+
+  .period, .itemMeta span, .credIssuer, .contactLabel, .socialIcon {
+    color: #666 !important;
+  }
+
+  .icon {
+    color: #666 !important;
+    stroke: #666 !important;
+  }
+
+  .contactGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .socialLinks {
+    gap: 1rem !important;
+  }
+
+  .socialIcon {
+    border-bottom: 1px solid #eee !important;
+  }
+
+  /* Force visibility for Framer Motion elements */
+  .page * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
