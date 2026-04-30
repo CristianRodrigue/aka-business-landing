@@ -107,14 +107,14 @@
   .container {
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: center; /* Centrar texto en móvil para mejor estética */
+    text-align: center;
   }
   
   .imageWrapper {
     max-width: 100%;
     width: 100%;
-    order: -1; /* Forzar que la foto aparezca arriba */
-    aspect-ratio: 1/1; /* Hacerla cuadrada en móvil para que no ocupe toda la pantalla */
+    order: -1;
+    aspect-ratio: 1/1;
     margin: 0 auto;
   }
 

@@ -236,21 +236,6 @@ export default function CurriculumPage() {
           </div>
         </motion.section>
 
-        {/* FOUNDER PHOTO - AT THE BOTTOM */}
-        <motion.section className={styles.photoSection} variants={itemVariants}>
-          <div className={styles.footerPhotoWrapper}>
-            <Image 
-              src="/founder.jpg" 
-              alt="Christian Camilo" 
-              width={400} 
-              height={500} 
-              className={styles.footerPhoto}
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-        </motion.section>
-
         {/* FOOTER */}
         <motion.section className={styles.downloadSection} variants={itemVariants}>
           <button className={styles.downloadBtn} onClick={() => window.print()}>
