@@ -69,6 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://prod.spline.design" />
+        <link rel="dns-prefetch" href="https://prod.spline.design" />
+      </head>
       <body>
         <SchemaOrg />
         {children}

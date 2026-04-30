@@ -270,6 +270,14 @@
   color: var(--chrome-dim);
 }
 
+.contactNote {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: var(--text-dark);
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
 .socialLinks {
   display: flex;
   gap: 1.5rem;
@@ -458,7 +466,7 @@
     color: #222 !important;
   }
 
-  .period, .itemMeta span, .credIssuer, .contactLabel, .socialIcon {
+  .period, .itemMeta span, .credIssuer, .contactLabel, .socialIcon, .contactNote {
     color: #666 !important;
   }
 

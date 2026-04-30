@@ -217,6 +217,7 @@ export default function CurriculumPage() {
             <div className={styles.contactItem}>
               <span className={styles.contactLabel}>PHONE</span>
               <a href="tel:+573209538768" className={styles.contactValue}>+57 320 953 8768</a>
+              <span className={styles.contactNote}>(WhatsApp / Email Preferred for initial contact)</span>
             </div>
 
             <div className={styles.contactItem}>

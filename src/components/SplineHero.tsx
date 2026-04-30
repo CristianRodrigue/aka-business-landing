@@ -17,13 +17,20 @@ export default function SplineHero() {
   const splineApp = useRef<unknown>(null);
 
   useEffect(() => {
-    // Retrasar la carga del 3D para priorizar el FCP (First Contentful Paint)
-    // Esto permite que el usuario vea el sitio INSTANTÁNEAMENTE antes de que el 3D empiece
+    // Reducido de 800ms a 100ms — prioriza el FCP pero sin desperdiciar tiempo
     const timer = setTimeout(() => {
       setShowSpline(true);
-    }, 800); // 800ms es el dulce punto entre velocidad y UX
+    }, 100);
 
-    return () => clearTimeout(timer);
+    // Timeout de seguridad: si Spline no carga en 8s, forzar transición
+    const safetyTimeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(safetyTimeout);
+    };
   }, []);
 
   const { scrollY } = useScroll();
@@ -60,10 +67,10 @@ export default function SplineHero() {
         style={{
           opacity: opacity,
           scale: scale,
-          zIndex: 50, // Lo subimos para que reciba el clic sí o sí
+          zIndex: 50,
           pointerEvents: 'auto'
         }}
-        onMouseDown={scrollToNext} // Clic de respaldo en todo el contenedor
+        onMouseDown={scrollToNext}
       >
         {showSpline && (
           <Spline
@@ -71,7 +78,6 @@ export default function SplineHero() {
             onLoad={onLoad}
             onMouseDown={(e: unknown) => {
               console.log("OBJ_CLICK:", (e as any).target?.name);
-              // Si Spline detecta algo, ya scrollToNext se ejecutará por el padre o por aquí
               scrollToNext();
             }}
           />
@@ -82,6 +88,26 @@ export default function SplineHero() {
       <AnimatePresence>
         {!isLoaded && (
           <div className={styles.loader}>
+            {/* Contenido inmediato mientras carga — el usuario ve algo de valor */}
+            <motion.div
+              className={styles.loaderBrand}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className={styles.loaderTitle}>AKA<br />BUSINESS</div>
+              <div className={styles.loaderSubtitle}>DIGITAL INFRASTRUCTURE</div>
+            </motion.div>
+
+            <div className={styles.loaderBar}>
+              <motion.div
+                className={styles.loaderBarFill}
+                initial={{ width: '0%' }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 7, ease: 'linear' }}
+              />
+            </div>
+
             <div className={styles.statusLabel}>
               <div className={styles.statusDot} />
               AKA_SYSTEM // CALIBRATING_RT_ENGINE

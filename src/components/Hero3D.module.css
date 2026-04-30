@@ -188,7 +188,43 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
-  gap: 1.5rem;
+  gap: 2.5rem;
+}
+
+.loaderBrand {
+  text-align: center;
+}
+
+.loaderTitle {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.loaderSubtitle {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--text-dark);
+  letter-spacing: 0.5em;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.loaderBar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.loaderBarFill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 1px;
 }
 
 @media (max-width: 900px) {
