@@ -186,7 +186,7 @@ export default function CurriculumPage() {
 
             <div className={styles.credentialCard}>
               <span className={styles.credType}>MANAGEMENT_CERT</span>
-              <div className={styles.credTitle}>SCRUM MASTER</div>
+              <div className={styles.credTitle}>SCRUM CERTIFICATE</div>
               <div className={styles.credIssuer}>AGILE METHODOLOGY SPECIALIST</div>
             </div>
 
