@@ -229,7 +229,7 @@ export default function CurriculumPage() {
             <div className={styles.credentialCard}>
               <span className={styles.credType}>ACADEMIC_DEGREE</span>
               <div className={styles.credTitle}>SYSTEMS ENGINEERING</div>
-              <div className={styles.credIssuer}>UNIVERSIDAD (CO) // COPNIA REGISTERED</div>
+              <div className={styles.credIssuer}>POLITECNICO GRANCOLOMBIANO // COPNIA PROFESSIONAL CARD</div>
             </div>
 
             <div className={styles.credentialCard}>

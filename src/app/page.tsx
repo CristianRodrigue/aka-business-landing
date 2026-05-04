@@ -47,6 +47,18 @@ export default function Home() {
           letterSpacing: '0.2em'
         }}>
           <div>© 2026 AKA_BUSINESS // ALL_RIGHTS_RESERVED // DIGITAL_INFRASTRUCTURE_V.1</div>
+          <a
+            href="mailto:christian@akabusiness.tech"
+            className="footerLink"
+            style={{
+              display: 'inline-flex',
+              marginTop: '1.5rem',
+              color: 'var(--text-muted)',
+              textDecoration: 'none'
+            }}
+          >
+            christian@akabusiness.tech
+          </a>
           
           <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center', gap: '2rem', alignItems: 'center' }}>
             <a 
