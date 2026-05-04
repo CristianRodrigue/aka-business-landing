@@ -25,18 +25,18 @@ export interface Project {
 const projects: Project[] = [
   {
     id: "01",
-    title: "DEMO PRO | INDUSTRIAL_LOGISTICS | US",
-    description: "High-performance infrastructure developed for a California-based corporation. Optimized for heavy data visualization and real-time operational tracking.",
+    title: "DEMO PRO | SERVICE BUSINESS | US",
+    description: "Fast business web experience built for clear positioning, responsive browsing, and strong PageSpeed presentation.",
     metric: "[ PERFORMANCE: 98/100 ]",
     externalLink: "https://direct-demo-landing.vercel.app/",
     fullDetails: {
-      problem: "Infrastructure unable to handle real-time logistical telemetry in high-traffic industrial zones.",
-      solution: "Implemented a custom SSR architecture with Next.js and distributed caching layers to achieve sub-second content delivery.",
-      stack: ["Next.js", "SSR", "Docker", "Nginx", "Redis"],
+      problem: "The business needed a sharper web presence that could load quickly, communicate value clearly, and support lead-generation campaigns.",
+      solution: "Built a focused Next.js experience with optimized media, clear sections, and performance-first implementation for desktop and mobile users.",
+      stack: ["Next.js", "React", "Responsive UI", "Performance Tuning"],
       metrics: [
         { label: "Lighthouse Score", value: "98/100" },
-        { label: "TTFB", value: "0.2ms" },
-        { label: "Availability", value: "99.99%" }
+        { label: "Delivery", value: "Vercel" },
+        { label: "UX Focus", value: "Lead Flow" }
       ],
       videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784658/2026-04-19_09-37-07_gt80kb.mp4",
       pagespeedImg: "/pagespeed/pagespeed-demo-desktop.jpeg"
@@ -44,19 +44,19 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "AKA_SOUNDS | HONORABLE_ENGINEERING_SELECTION",
+    title: "AKA_SOUNDS | DIGITAL_PRODUCT_STORE",
     isSpecial: true,
-    description: "Custom industrial-grade ecosystem engineered for digital asset delivery. A mission-critical infrastructure designed for speed, security, and conversion.",
-    metric: "[ INFRASTRUCTURE: CORE_SENSITIVE ]",
+    description: "Custom storefront for digital audio products, built around speed, payments, customer access, and secure file delivery.",
+    metric: "[ LAUNCH: 21_DAY_SPRINT ]",
     externalLink: "https://akasounds.com/",
     fullDetails: {
-      problem: "Generic platforms like Shopify or WordPress fail to provide the control, performance, and security required for high-end digital asset distribution.",
-      solution: "Engineered a custom ecosystem using Next.js and Vercel, eliminating platform fees and achieving performance standards that off-the-shelf solutions cannot match.",
+      problem: "Digital audio products needed a direct sales flow with catalog control, payment handling, customer communication, and protected downloads.",
+      solution: "Built a custom e-commerce workflow using Next.js and Vercel, connecting payments, email, and signed asset delivery without forcing the brand into a generic template.",
       stack: ["Paddle API", "GCS + Signed URLs", "Resend", "Next.js"],
       metrics: [
         { label: "PageSpeed Score", value: "98/100" },
-        { label: "Asset Delivery", value: "Secure_Signed" },
-        { label: "Platform Fees", value: "0%" }
+        { label: "Launch Sprint", value: "21 Days" },
+        { label: "Asset Delivery", value: "Signed URLs" }
       ],
       videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776786210/2026-04-19_09-48-08_-_Compressed_with_FlexClip_idkpxu.mp4",
       pagespeedImg: "/pagespeed/pagespeed-akasounds-page.jpg"
@@ -64,18 +64,18 @@ const projects: Project[] = [
   },
   {
     id: "03",
-    title: "COMBAT_SPORTS_E-COMMERCE_ENGINE | P4P",
-    description: "High-performance sales engine optimized for conversions. Industrial aesthetic coupled with an ultra-smooth user experience for complex product catalogs.",
-    metric: "[ CONVERSION_ENGINE: OPTIMIZED ]",
+    title: "P4P | COMBAT_SPORTS_STORE",
+    description: "E-commerce prototype for a combat sports brand, focused on strong visual direction and a smoother product browsing flow.",
+    metric: "[ E-COMMERCE: UX_PROTOTYPE ]",
     externalLink: "https://p4p-store.vercel.app/",
     fullDetails: {
-      problem: "Complex product catalogs often suffer from poor performance, leading to high bounce rates and lost conversions in the combat sports market.",
-      solution: "Developed an ultra-fast e-commerce engine with an industrial design focus, ensuring a frictionless path to purchase through advanced frontend optimization.",
+      problem: "Product-heavy stores can feel generic, slow, or hard to browse, which weakens trust before a buyer reaches checkout.",
+      solution: "Designed and developed a fast storefront prototype with a stronger brand feel, smoother product discovery, and responsive frontend interactions.",
       stack: ["Next.js", "TailwindCSS", "Framer Motion", "API Engine"],
       metrics: [
-        { label: "User Experience", value: "Ultra_Smooth" },
-        { label: "Design Level", value: "Industrial" },
-        { label: "Latency", value: "Sub-second" }
+        { label: "Experience", value: "Responsive" },
+        { label: "Design Focus", value: "Brand-Led" },
+        { label: "Frontend", value: "Optimized" }
       ],
       videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784661/2026-04-16_18-01-05_rccyc2.mp4",
       pagespeedImg: "/pagespeed/pagespeed-p4p-page.jpg"
@@ -111,8 +111,8 @@ export default function SystemShowcase() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className={styles.label}>[ 03 // ARCHITECTURES_DEPLOYED ]</span>
-          <h2 className={styles.title}>INDUSTRIAL_GRADE <br /> DEPLOYMENTS</h2>
+          <span className={styles.label}>[ 03 // SELECTED_BUILDS ]</span>
+          <h2 className={styles.title}>FAST_WEB <br /> SYSTEMS</h2>
         </motion.div>
 
         <div className={styles.grid}>

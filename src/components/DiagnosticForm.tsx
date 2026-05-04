@@ -45,14 +45,14 @@ export default function DiagnosticForm() {
           <span className={styles.label}>{'// CONTACT_GATEWAY'}</span>
           <h2 className={styles.title}>PROJECT <br /> INQUIRY</h2>
           <p className={styles.description}>
-            Request official engagement or technical consultation. 
-            All requests are verified by our core engineering team.
+            Tell me what you want to improve: website performance, e-commerce flow, automation, 
+            a new digital product, or a cleaner business presence.
           </p>
         </div>
 
         {success ? (
           <div className={styles.successMessage}>
-            {'// MESSAGE_RECEIVED. OUR TEAM WILL REACH OUT SHORTLY via CORPORATE CHANNEL.'}
+            {'// MESSAGE_RECEIVED. I WILL REACH OUT SHORTLY.'}
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -65,23 +65,23 @@ export default function DiagnosticForm() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.fieldLabel}>CORPORATE_EMAIL</label>
+              <label className={styles.fieldLabel}>EMAIL</label>
               <input className={styles.input} type="email" name="email" placeholder="id@company.com" required />
             </div>
 
             <div className={styles.formGroup}>
               <label className={styles.fieldLabel}>COMPANY_NAME</label>
-              <input className={styles.input} type="text" name="company" placeholder="Legal Entity..." required />
+              <input className={styles.input} type="text" name="company" placeholder="Company / Brand / Project" required />
             </div>
 
             <div className={styles.formGroup}>
               <label className={styles.fieldLabel}>CONTACT_PHONE</label>
-              <input className={styles.input} type="tel" name="phone" placeholder="[ TECHNICAL_CONTACT_NUMBER ]" />
+              <input className={styles.input} type="tel" name="phone" placeholder="[ WHATSAPP / CONTACT_NUMBER ]" />
             </div>
 
             <div className={styles.formGroup}>
               <label className={styles.fieldLabel}>PROJECT_REQUIREMENTS</label>
-              <textarea className={styles.textarea} name="needs" placeholder="Briefly describe your objectives..." required />
+              <textarea className={styles.textarea} name="needs" placeholder="Briefly describe what you need, what exists today, and what result you want..." required />
             </div>
 
             <button type="submit" className={styles.submitBtn} disabled={pending}>

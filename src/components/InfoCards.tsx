@@ -7,20 +7,20 @@ import styles from "./InfoCards.module.css";
 const CARDS = [
   {
     index: "// INDEX_01",
-    title: "INDUSTRIAL-GRADE SECURITY",
-    desc: "Unbreakable architectures designed to mitigate critical risks and guarantee the integrity of your digital assets under any condition.",
+    title: "RELIABLE FOUNDATIONS",
+    desc: "Clean, maintainable web systems built with sensible security, stable deployments, and fewer moving parts for the business to worry about.",
     icon: Shield,
   },
   {
     index: "// INDEX_02",
-    title: "OPTIMIZED ACQUISITION",
-    desc: "Technical conversion engines that transform specialized traffic into measurable and scalable business results.",
+    title: "PERFORMANCE THAT SELLS",
+    desc: "Fast pages, clear user flows, and practical conversion improvements for visitors who need to understand, trust, and act quickly.",
     icon: Target,
   },
   {
     index: "// INDEX_03",
-    title: "TECHNOLOGICAL STATUS",
-    desc: "Digital authority for the 0.1% of industrial firms. It's not just software; it's the mastery of the competitive environment.",
+    title: "AUTOMATION-READY DELIVERY",
+    desc: "Web platforms prepared for integrations, content workflows, payment flows, and AI-assisted operations as the business grows.",
     icon: Zap,
   },
 ];
@@ -52,7 +52,7 @@ export default function InfoCards() {
     <section className={styles.section}>
       <div className={styles.titleArea}>
         <p className={styles.subtitle}>{'// CORE_PROPOSITION'}</p>
-        <h2 className={styles.headline}>PILLARS OF AUTHORITY</h2>
+        <h2 className={styles.headline}>WHAT GETS BUILT</h2>
       </div>
       
       <div className={styles.grid}>

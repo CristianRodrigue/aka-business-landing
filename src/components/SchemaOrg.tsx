@@ -3,11 +3,11 @@ export default function SchemaOrg() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "AKA Business",
-    "alternateName": "AKA Business Digital Infrastructure",
+    "alternateName": "AKA Business Web Systems",
     "url": "https://akabusiness.tech",
     "logo": "https://akabusiness.tech/icon.png",
     "image": "https://akabusiness.tech/opengraph-image.png",
-    "description": "High-Performance Infrastructure Architecture firm specialized in mission-critical industrial systems and SSR optimization.",
+    "description": "Full-stack web systems studio focused on fast business websites, e-commerce flows, performance optimization, and practical automation.",
     "founder": {
       "@type": "Person",
       "name": "Christian Camilo",
@@ -17,12 +17,13 @@ export default function SchemaOrg() {
       ]
     },
     "knowsAbout": [
-      "Infrastructure Architecture",
+      "Full-Stack Development",
       "Next.js",
-      "SSR Optimization",
-      "Industrial Systems",
+      "Web Performance",
+      "E-commerce Development",
+      "Digital Automation",
       "Software Engineering",
-      "Performance Engineering"
+      "React Development"
     ],
     "areaServed": "Global",
     "address": {

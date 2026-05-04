@@ -15,25 +15,25 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://akabusiness.tech'),
-  title: "AKA Business | High-Performance Infrastructure Architect",
-  description: "Specialized Digital Infrastructure Engineering Firm for industrial sectors. High-performance architecture, SSR optimization, and mission-critical systems by Christian Camilo.",
+  title: "AKA Business | Full-Stack Web Systems and Performance",
+  description: "Fast, polished web systems for businesses that need performance, automation, e-commerce flows, and clear digital execution by Christian Camilo.",
   keywords: [
-    "High-Performance Infrastructure",
-    "Infrastructure Architect",
+    "Full-Stack Developer",
+    "Business Website Development",
     "Next.js Performance",
-    "Industrial Logistics Tech",
-    "SSR Optimization",
-    "Digital Infrastructure Engineering",
+    "E-commerce Development",
+    "Web Performance",
+    "Digital Automation",
     "Christian Camilo",
     "AKA Business",
-    "Mission-Critical Systems",
-    "Software Architecture"
+    "Software Engineering",
+    "React Development"
   ],
   authors: [{ name: "Christian Camilo", url: "https://github.com/CristianRodrigue" }],
   publisher: "AKA Business",
   openGraph: {
-    title: "AKA Business | High-Performance Infrastructure Architect",
-    description: "Specialized Digital Infrastructure Engineering Firm for industrial sectors. High-performance architecture by Christian Camilo.",
+    title: "AKA Business | Full-Stack Web Systems and Performance",
+    description: "Fast, polished web systems for businesses that need performance, automation, and clear digital execution by Christian Camilo.",
     url: "https://akabusiness.tech",
     siteName: "AKA Business",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "AKA Business | High-Performance Infrastructure Architect",
+        alt: "AKA Business | Full-Stack Web Systems and Performance",
       },
     ],
     locale: "en_US",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AKA Business | High-Performance Infrastructure Architect",
-    description: "Specialized Digital Infrastructure Engineering Firm. High-performance architecture by Christian Camilo.",
+    title: "AKA Business | Full-Stack Web Systems and Performance",
+    description: "Fast, polished web systems for businesses that need performance and automation by Christian Camilo.",
     images: ["/opengraph-image.png"],
   },
   icons: {

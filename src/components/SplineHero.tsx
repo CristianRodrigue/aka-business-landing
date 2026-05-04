@@ -5,6 +5,10 @@ import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./Hero3D.module.css";
 
+type NamedEventTarget = EventTarget & {
+  name?: string;
+};
+
 // Carga directa y optimizada de Spline
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
@@ -76,8 +80,8 @@ export default function SplineHero() {
           <Spline
             scene="https://prod.spline.design/EFyfATIAsCOgJKJ5/scene.splinecode"
             onLoad={onLoad}
-            onMouseDown={(e: unknown) => {
-              console.log("OBJ_CLICK:", (e as any).target?.name);
+            onMouseDown={(e: React.MouseEvent<HTMLDivElement>) => {
+              void (e.target as NamedEventTarget).name;
               scrollToNext();
             }}
           />
@@ -96,7 +100,7 @@ export default function SplineHero() {
               transition={{ duration: 0.4 }}
             >
               <div className={styles.loaderTitle}>AKA<br />BUSINESS</div>
-              <div className={styles.loaderSubtitle}>DIGITAL INFRASTRUCTURE</div>
+              <div className={styles.loaderSubtitle}>WEB SYSTEMS // PERFORMANCE</div>
             </motion.div>
 
             <div className={styles.loaderBar}>
@@ -110,7 +114,7 @@ export default function SplineHero() {
 
             <div className={styles.statusLabel}>
               <div className={styles.statusDot} />
-              AKA_SYSTEM // CALIBRATING_RT_ENGINE
+              AKA_SYSTEM // LOADING_INTERFACE
             </div>
           </div>
         )}
@@ -128,10 +132,10 @@ export default function SplineHero() {
             <div className={styles.topRow}>
               <div className={styles.statusLabel}>
                 <div className={styles.statusDot} />
-                AKA_ENGINE // VIEWER_RUNTIME_STABLE
+                AKA_ENGINE // INTERFACE_READY
               </div>
               <div className={styles.statusLabel}>
-                QUALITY_MODE // ULTRA
+                BUILD_MODE // PERFORMANCE
               </div>
             </div>
 

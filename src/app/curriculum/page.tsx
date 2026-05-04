@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import styles from './curriculum.module.css';
 
@@ -46,17 +45,25 @@ export default function CurriculumPage() {
         <motion.header className={styles.header} variants={itemVariants}>
           <h1 className={styles.name}>CHRISTIAN<br />CAMILO</h1>
           <p className={styles.title}>
-            INFRASTRUCTURE ARCHITECT // FULL STACK SOLUTIONS // AI STRATEGIST
+            FULL-STACK DEVELOPER // PERFORMANCE-FOCUSED WEB SYSTEMS // AI-AUGMENTED WORKFLOWS
           </p>
+          <div className={styles.headerContact}>
+            <a href="mailto:christian@akabusiness.tech">christian@akabusiness.tech</a>
+            <a href="tel:+573209538768">+57 320 953 8768</a>
+            <a href="https://github.com/CristianRodrigue" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/christian-camilo-dev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <span>Colombia / Remote</span>
+          </div>
         </motion.header>
 
         {/* PROFILE */}
         <motion.section className={styles.section} variants={itemVariants}>
           <span className={styles.sectionLabel}>[ 01_EXECUTIVE_SUMMARY ]</span>
           <p className={styles.summaryText}>
-            Architect of high-performance digital ecosystems specialized in accelerating development cycles through 
-            Augmented AI. Expert in transforming complex business requirements into scalable, surgical-grade 
-            infrastructures with a focus on zero technical debt and extreme conversion optimization.
+            Full-stack developer and founder of AKA Business, focused on building fast, reliable web platforms 
+            for businesses that need clear execution, practical automation, and measurable performance. 
+            I combine frontend, backend, infrastructure fundamentals, and AI-assisted workflows to ship 
+            polished digital products with speed and technical care.
           </p>
         </motion.section>
 
@@ -68,12 +75,12 @@ export default function CurriculumPage() {
             <div className={styles.itemMeta}>
               <span className={styles.company}>AKA BUSINESS</span>
               <span className={styles.period}>PRESENT // FOUNDER</span>
-              <span className={styles.role}>LEAD INFRASTRUCTURE ARCHITECT</span>
+              <span className={styles.role}>FULL-STACK DEVELOPMENT & DIGITAL SYSTEMS</span>
             </div>
             <div className={styles.description}>
-              Founding and engineering a specialized consultancy for the industrial 0.1%. 
-              Designing digital nervous systems for modern industry, focusing on performance, 
-              security, and technical dominance.
+              Building a technical studio for business websites, e-commerce flows, and automation-ready 
+              digital systems. Responsible for discovery, UX direction, frontend delivery, backend 
+              integration, deployment, and performance tuning.
             </div>
           </div>
 
@@ -81,14 +88,15 @@ export default function CurriculumPage() {
             <div className={styles.itemMeta}>
               <span className={styles.company}>AKA SOUNDS</span>
               <span className={styles.period}>CEO & LEAD DEVELOPER</span>
-              <span className={styles.role}>E-COMMERCE ECOSYSTEM DESIGN</span>
+              <span className={styles.role}>E-COMMERCE PRODUCT DEVELOPMENT</span>
             </div>
             <div className={styles.description}>
-              Engineered and deployed a high-scale e-commerce platform in a record 21-day sprint.
+              Designed and launched an e-commerce platform for digital audio products in a focused 
+              21-day sprint, handling the technical build and product workflow from concept to release.
               <ul className={styles.achievements}>
-                <li>Modular architecture for multi-line digital product distribution (Sample Packs).</li>
-                <li>Seamless integration of international payment gateways and encrypted auth systems.</li>
-                <li>Zero-downtime infrastructure for global audio engineering clients.</li>
+                <li>Product structure for sample packs, downloadable assets, and multi-line catalog growth.</li>
+                <li>Payment, authentication, and delivery flows prepared for international customers.</li>
+                <li>Performance-focused frontend experience for producers and audio engineering clients.</li>
               </ul>
             </div>
           </div>
@@ -97,13 +105,14 @@ export default function CurriculumPage() {
             <div className={styles.itemMeta}>
               <span className={styles.company}>RAMA JUDICIAL</span>
               <span className={styles.period}>AUDITOR & TECH SUPPORT</span>
-              <span className={styles.role}>CRITICAL SYSTEMS INTEGRITY</span>
+              <span className={styles.role}>SYSTEM SUPPORT & INFORMATION CONTROL</span>
             </div>
             <div className={styles.description}>
-              Managed auditing and technical integrity for high-stakes information systems.
+              Supported technical operations and information control processes in a public-sector 
+              legal environment where reliability, confidentiality, and traceability were essential.
               <ul className={styles.achievements}>
-                <li>Supervision of critical legal databases and information flow security.</li>
-                <li>Specialized technical support ensuring 24/7 continuity for state legal processes.</li>
+                <li>Assisted with audit routines, records review, and information flow verification.</li>
+                <li>Provided technical support for users and systems involved in legal service continuity.</li>
               </ul>
             </div>
           </div>
@@ -112,11 +121,12 @@ export default function CurriculumPage() {
             <div className={styles.itemMeta}>
               <span className={styles.company}>GLOBAL CONSULTANCY</span>
               <span className={styles.period}>FREELANCE / USA & LATAM</span>
-              <span className={styles.role}>PERFORMANCE ENGINEERING</span>
+              <span className={styles.role}>WEB PERFORMANCE & DELIVERY</span>
             </div>
             <div className={styles.description}>
-              Developed precision platforms for the US Construction sector and Colombian Retail.
-              Focus on Core Web Vitals, extreme performance, and data-driven UX.
+              Delivered websites and digital improvements for clients in construction, retail, and service 
+              businesses. Focused on clean implementation, Core Web Vitals, responsive interfaces, and 
+              practical conversion improvements.
             </div>
           </div>
 
@@ -124,21 +134,59 @@ export default function CurriculumPage() {
             <div className={styles.itemMeta}>
               <span className={styles.company}>PROCOLOMBIA</span>
               <span className={styles.period}>THESIS PROJECT // DEV</span>
-              <span className={styles.role}>SYSTEM ARCHITECTURE</span>
+              <span className={styles.role}>FULL-STACK SYSTEM DEVELOPMENT</span>
             </div>
             <div className={styles.description}>
-              Engineered a high-performance PQR (Complaints & Requests) management system.
+              Developed a PQR management system for complaints and requests as an academic 
+              full-stack project connected to institutional service workflows.
               <ul className={styles.achievements}>
                 <li>Full-stack development using .NET Core for the backend and Angular for the interface.</li>
-                <li>Strategic implementation of information flow for institutional service optimization.</li>
+                <li>Structured request tracking, user flows, and service information handling.</li>
               </ul>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* SELECTED PROJECTS */}
+        <motion.section className={styles.section} variants={itemVariants}>
+          <span className={styles.sectionLabel}>[ 03_SELECTED_PROJECTS ]</span>
+
+          <div className={styles.projectGrid}>
+            <div className={styles.projectCard}>
+              <span className={styles.projectType}>E-COMMERCE / DIGITAL PRODUCTS</span>
+              <h3>AKA Sounds</h3>
+              <p>
+                Built and launched a storefront for digital audio assets, covering catalog structure, 
+                payment flow, customer access, and product delivery.
+              </p>
+              <div className={styles.projectStack}>Next.js / React / Payments / Digital Delivery</div>
+            </div>
+
+            <div className={styles.projectCard}>
+              <span className={styles.projectType}>INSTITUTIONAL SYSTEM</span>
+              <h3>PQR Management System</h3>
+              <p>
+                Developed a request-management workflow for complaints and service cases, with backend 
+                logic, interface structure, and traceable information handling.
+              </p>
+              <div className={styles.projectStack}>.NET Core / Angular / SQL / Process Design</div>
+            </div>
+
+            <div className={styles.projectCard}>
+              <span className={styles.projectType}>PERFORMANCE & BUSINESS WEBSITES</span>
+              <h3>Client Web Builds</h3>
+              <p>
+                Delivered fast, responsive web experiences for service businesses, focused on clear 
+                positioning, Core Web Vitals, and practical conversion improvements.
+              </p>
+              <div className={styles.projectStack}>React / Next.js / SEO Basics / Web Performance</div>
             </div>
           </div>
         </motion.section>
 
         {/* TECH ARSENAL */}
         <motion.section className={styles.section} variants={itemVariants}>
-          <span className={styles.sectionLabel}>[ 03_TECHNOLOGICAL_ARSENAL ]</span>
+          <span className={styles.sectionLabel}>[ 04_TECHNOLOGICAL_TOOLKIT ]</span>
           
           <div className={styles.techGrid}>
             <div className={styles.techCategory}>
@@ -155,19 +203,19 @@ export default function CurriculumPage() {
             <div className={styles.techCategory}>
               <h3>AI AUGMENTED DEV</h3>
               <div className={styles.techList}>
-                <span className={styles.techTag}>LLM Orchestration</span>
+                <span className={styles.techTag}>AI-Assisted Coding</span>
                 <span className={styles.techTag}>Rapid Prototyping</span>
-                <span className={styles.techTag}>AI-Driven Refactoring</span>
+                <span className={styles.techTag}>Workflow Automation</span>
               </div>
             </div>
 
             <div className={styles.techCategory}>
               <h3>INFRASTRUCTURE</h3>
               <div className={styles.techList}>
-                <span className={styles.techTag}>AWS Ecosystem</span>
+                <span className={styles.techTag}>Cloud Deployment</span>
                 <span className={styles.techTag}>SQL / NoSQL</span>
                 <span className={styles.techTag}>CI / CD Pipelines</span>
-                <span className={styles.techTag}>System Auditing</span>
+                <span className={styles.techTag}>Performance Auditing</span>
               </div>
             </div>
           </div>
@@ -175,7 +223,7 @@ export default function CurriculumPage() {
 
         {/* CREDENTIALS */}
         <motion.section className={styles.section} variants={itemVariants}>
-          <span className={styles.sectionLabel}>[ 04_CREDENTIALS_LOG ]</span>
+          <span className={styles.sectionLabel}>[ 05_CREDENTIALS_LOG ]</span>
           
           <div className={styles.credentialsGrid}>
             <div className={styles.credentialCard}>
@@ -187,7 +235,7 @@ export default function CurriculumPage() {
             <div className={styles.credentialCard}>
               <span className={styles.credType}>MANAGEMENT_CERT</span>
               <div className={styles.credTitle}>SCRUM CERTIFICATE</div>
-              <div className={styles.credIssuer}>AGILE METHODOLOGY SPECIALIST</div>
+              <div className={styles.credIssuer}>AGILE PROJECT FOUNDATIONS</div>
             </div>
 
             <div className={styles.credentialCard}>
@@ -199,14 +247,14 @@ export default function CurriculumPage() {
             <div className={styles.credentialCard}>
               <span className={styles.credType}>COMMUNICATION</span>
               <div className={styles.credTitle}>ENGLISH & SPANISH</div>
-              <div className={styles.credIssuer}>PROFESSIONAL BILINGUAL PROFICIENCY</div>
+              <div className={styles.credIssuer}>CLIENT COMMUNICATION & TECHNICAL DOCUMENTATION</div>
             </div>
           </div>
         </motion.section>
 
         {/* CONTACT & CHANNELS */}
         <motion.section className={styles.section} variants={itemVariants}>
-          <span className={styles.sectionLabel}>[ 05_CONTACT_DIRECT ]</span>
+          <span className={styles.sectionLabel}>[ 06_CONTACT_DIRECT ]</span>
           
           <div className={styles.contactGrid}>
             <div className={styles.contactItem}>
@@ -238,9 +286,9 @@ export default function CurriculumPage() {
 
         {/* FOOTER */}
         <motion.section className={styles.downloadSection} variants={itemVariants}>
-          <button className={styles.downloadBtn} onClick={() => window.print()}>
-            GENERATE_DOSSIER_PDF
-          </button>
+          <a className={styles.downloadBtn} href="/Christian-Camilo-CV.pdf" download>
+            DOWNLOAD_DOSSIER_PDF
+          </a>
         </motion.section>
       </motion.div>
     </main>
