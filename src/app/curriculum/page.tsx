@@ -45,7 +45,7 @@ export default function CurriculumPage() {
         <motion.header className={styles.header} variants={itemVariants}>
           <h1 className={styles.name}>CHRISTIAN<br />CAMILO</h1>
           <p className={styles.title}>
-            FULL-STACK DEVELOPER // PERFORMANCE-FOCUSED WEB SYSTEMS // AI-AUGMENTED WORKFLOWS
+            SYSTEMS ENGINEER (COPNIA) // FULL-STACK DEVELOPER // PERFORMANCE-FOCUSED WEB SYSTEMS
           </p>
           <div className={styles.headerContact}>
             <a href="mailto:christian@akabusiness.tech">christian@akabusiness.tech</a>
@@ -60,10 +60,10 @@ export default function CurriculumPage() {
         <motion.section className={styles.section} variants={itemVariants}>
           <span className={styles.sectionLabel}>[ 01_EXECUTIVE_SUMMARY ]</span>
           <p className={styles.summaryText}>
-            Full-stack developer and founder of AKA Business, focused on building fast, reliable web platforms 
-            for businesses that need clear execution, practical automation, and measurable performance. 
-            I combine frontend, backend, infrastructure fundamentals, and AI-assisted workflows to ship 
-            polished digital products with speed and technical care.
+            Systems Engineer with COPNIA professional registration and founder of AKA Business, focused on 
+            full-stack web systems, performance optimization, and automation-ready digital workflows. I build 
+            practical platforms for businesses that need reliable interfaces, clear technical execution, and 
+            measurable improvements in speed, usability, and delivery quality.
           </p>
         </motion.section>
 
@@ -74,20 +74,20 @@ export default function CurriculumPage() {
           <div className={styles.experienceItem}>
             <div className={styles.itemMeta}>
               <span className={styles.company}>AKA BUSINESS</span>
-              <span className={styles.period}>PRESENT // FOUNDER</span>
-              <span className={styles.role}>FULL-STACK DEVELOPMENT & DIGITAL SYSTEMS</span>
+              <span className={styles.period}>JAN 2026 - PRESENT // FOUNDER</span>
+              <span className={styles.role}>FULL-STACK DEVELOPMENT & WEB SYSTEMS</span>
             </div>
             <div className={styles.description}>
               Building a technical studio for business websites, e-commerce flows, and automation-ready 
               digital systems. Responsible for discovery, UX direction, frontend delivery, backend 
-              integration, deployment, and performance tuning.
+              integration, deployment, and performance tuning for client-facing platforms.
             </div>
           </div>
 
           <div className={styles.experienceItem}>
             <div className={styles.itemMeta}>
               <span className={styles.company}>AKA SOUNDS</span>
-              <span className={styles.period}>CEO & LEAD DEVELOPER</span>
+              <span className={styles.period}>INDEPENDENT PROJECT // 21-DAY BUILD</span>
               <span className={styles.role}>E-COMMERCE PRODUCT DEVELOPMENT</span>
             </div>
             <div className={styles.description}>
@@ -104,7 +104,7 @@ export default function CurriculumPage() {
           <div className={styles.experienceItem}>
             <div className={styles.itemMeta}>
               <span className={styles.company}>RAMA JUDICIAL</span>
-              <span className={styles.period}>AUDITOR & TECH SUPPORT</span>
+              <span className={styles.period}>APR 2025 - NOV 2025 // AUDITOR</span>
               <span className={styles.role}>SYSTEM SUPPORT & INFORMATION CONTROL</span>
             </div>
             <div className={styles.description}>
@@ -120,7 +120,7 @@ export default function CurriculumPage() {
           <div className={styles.experienceItem}>
             <div className={styles.itemMeta}>
               <span className={styles.company}>GLOBAL CONSULTANCY</span>
-              <span className={styles.period}>FREELANCE / USA & LATAM</span>
+              <span className={styles.period}>FREELANCE // USA & LATAM CLIENTS</span>
               <span className={styles.role}>WEB PERFORMANCE & DELIVERY</span>
             </div>
             <div className={styles.description}>
@@ -133,7 +133,7 @@ export default function CurriculumPage() {
           <div className={styles.experienceItem}>
             <div className={styles.itemMeta}>
               <span className={styles.company}>PROCOLOMBIA</span>
-              <span className={styles.period}>THESIS PROJECT // DEV</span>
+              <span className={styles.period}>JAN 2023 - JUL 2023 // THESIS PROJECT</span>
               <span className={styles.role}>FULL-STACK SYSTEM DEVELOPMENT</span>
             </div>
             <div className={styles.description}>
