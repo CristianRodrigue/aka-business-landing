@@ -19,12 +19,43 @@ export interface Project {
     metrics: { label: string; value: string }[];
     videoUrl?: string;
     pagespeedImg?: string;
+    gallery?: string[];
   };
 }
 
 const projects: Project[] = [
   {
     id: "01",
+    title: "TRY_VERITY | AI_INTERVIEW_SIMULATION",
+    isSpecial: true,
+    description: "AI-powered interview simulation system replicating real technical pressure with dynamic voice interaction and contextual candidate analysis.",
+    metric: "[ AI_SYSTEM: REAL_TIME_VOICE ]",
+    externalLink: "https://www.tryverity.co/",
+    fullDetails: {
+      problem: "Professionals needed a way to train beyond static interview prep by facing real technical and behavioral pressure with dynamic conversational feedback.",
+      solution: "Engineered a real-time AI simulation platform using Next.js, Supabase, and voice streaming infrastructure to replicate human recruiter interactions and generate contextual scoring.",
+      stack: ["Next.js", "Supabase", "Voice AI APIs", "Real-time Streaming"],
+      metrics: [
+        { label: "Simulation", value: "Real-time Voice" },
+        { label: "Analysis", value: "CV-Aware Scoring" },
+        { label: "Architecture", value: "Full-Stack Scalable" }
+      ],
+      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1779909036/TryVerity-demo-video-ai-interview-simulator_t1qzjx.mp4",
+      gallery: [
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909101/chat_sqcre0.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909101/fedback_fllocw.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909101/sugerencia_eew8e2.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909101/history_rite5p.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909101/dashboard_rwxlbb.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909100/report_rmgrak.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909100/lading_djcpa7.jpg",
+        "https://res.cloudinary.com/drrx9rcec/image/upload/v1779909100/advanceSettings_hfvopi.jpg"
+      ],
+      pagespeedImg: "" // Opcional, ya que usaremos gallery
+    }
+  },
+  {
+    id: "02",
     title: "DEMO PRO | SERVICE BUSINESS | US",
     description: "Fast business web experience built for clear positioning, responsive browsing, and strong PageSpeed presentation.",
     metric: "[ PERFORMANCE: 98/100 ]",

@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X, Cpu, Server, Activity } from "lucide-react";
+import { X, Cpu, Server, Activity, ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ProjectDetail.module.css";
 import { Project } from "./SystemShowcase";
 
@@ -12,6 +13,20 @@ interface ProjectDetailProps {
 }
 
 export default function ProjectDetail({ project, onClose }: ProjectDetailProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    if (project.fullDetails.gallery) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.fullDetails.gallery!.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (project.fullDetails.gallery) {
+      setCurrentImageIndex((prev) => (prev - 1 + project.fullDetails.gallery!.length) % project.fullDetails.gallery!.length);
+    }
+  };
+
   return (
     <motion.div 
       className={styles.overlay}
@@ -43,7 +58,50 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
               />
             </div>
             <div className={styles.imageGrid}>
-              {project.fullDetails.pagespeedImg ? (
+              {project.fullDetails.gallery && project.fullDetails.gallery.length > 0 ? (
+                <div className={styles.carouselContainer}>
+                  <AnimatePresence mode="wait">
+                    <motion.div 
+                      key={currentImageIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className={styles.carouselSlide}
+                    >
+                      <Image 
+                        src={project.fullDetails.gallery[currentImageIndex]} 
+                        alt={`${project.title} Screenshot ${currentImageIndex + 1}`} 
+                        fill
+                        style={{ objectFit: 'contain', opacity: 0.9 }} 
+                      />
+                      <div className={styles.carouselTag}>
+                        [ RENDER_{currentImageIndex + 1} / {project.fullDetails.gallery.length} ]
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                  
+                  {project.fullDetails.gallery.length > 1 && (
+                    <>
+                      <button className={styles.carouselBtn} style={{ left: '10px' }} onClick={prevImage}>
+                        <ChevronLeft size={24} />
+                      </button>
+                      <button className={styles.carouselBtn} style={{ right: '10px' }} onClick={nextImage}>
+                        <ChevronRight size={24} />
+                      </button>
+                      <div className={styles.carouselIndicators}>
+                        {project.fullDetails.gallery.map((_, idx) => (
+                          <div 
+                            key={idx} 
+                            className={`${styles.indicatorDot} ${idx === currentImageIndex ? styles.activeDot : ''}`}
+                            onClick={() => setCurrentImageIndex(idx)}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ) : project.fullDetails.pagespeedImg ? (
                 <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
                   <Image 
                     src={project.fullDetails.pagespeedImg} 
@@ -51,24 +109,16 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
                     fill
                     style={{ objectFit: 'cover', opacity: 0.7 }} 
                   />
-                  <div style={{ 
-                    position: 'absolute', 
-                    top: '10px', 
-                    left: '10px', 
-                    background: 'rgba(0,0,0,0.8)', 
-                    padding: '4px 8px', 
-                    fontSize: '0.5rem', 
-                    fontFamily: 'var(--font-code)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    zIndex: 2
-                  }}>
+                  <div className={styles.carouselTag}>
                     [ PERFORMANCE_REPORT_SNAPSHOT ]
                   </div>
                 </div>
               ) : (
                 <div className={styles.imagePlaceholder}>[ DATA_VIZ_RENDER ]</div>
               )}
-              <div className={styles.imagePlaceholder}>[ AUDIT_LOG_SNAPSHOT ]</div>
+              {(!project.fullDetails.gallery || project.fullDetails.gallery.length === 0) && (
+                <div className={styles.imagePlaceholder}>[ AUDIT_LOG_SNAPSHOT ]</div>
+              )}
             </div>
           </div>
 
