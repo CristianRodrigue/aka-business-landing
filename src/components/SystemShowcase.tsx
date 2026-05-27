@@ -74,7 +74,7 @@ const projects: Project[] = [
     }
   },
   {
-    id: "02",
+    id: "03",
     title: "AKA_SOUNDS | DIGITAL_PRODUCT_STORE",
     isSpecial: true,
     description: "Custom storefront for digital audio products, built around speed, payments, customer access, and secure file delivery.",
@@ -94,7 +94,7 @@ const projects: Project[] = [
     }
   },
   {
-    id: "03",
+    id: "04",
     title: "P4P | COMBAT_SPORTS_STORE",
     description: "E-commerce prototype for a combat sports brand, focused on strong visual direction and a smoother product browsing flow.",
     metric: "[ E-COMMERCE: UX_PROTOTYPE ]",
