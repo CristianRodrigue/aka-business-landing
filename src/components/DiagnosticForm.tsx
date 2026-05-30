@@ -33,7 +33,7 @@ export default function DiagnosticForm() {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="project-intake">
       <motion.div 
         className={styles.container}
         initial={{ opacity: 0, y: 20 }}
@@ -45,14 +45,19 @@ export default function DiagnosticForm() {
           <span className={styles.label}>{'// CONTACT_GATEWAY'}</span>
           <h2 className={styles.title}>PROJECT <br /> INQUIRY</h2>
           <p className={styles.description}>
-            Tell me what you want to improve: website performance, e-commerce flow, automation, 
-            a new digital product, or a cleaner business presence.
+            Start with the business problem. Every inquiry receives a technical review, and I respond 
+            within 24-48 hours with a practical next step.
           </p>
+          <div className={styles.reviewList}>
+            <span>Performance audit</span>
+            <span>Automation opportunity</span>
+            <span>System scope review</span>
+          </div>
         </div>
 
         {success ? (
           <div className={styles.successMessage}>
-            {'// MESSAGE_RECEIVED. I WILL REACH OUT SHORTLY.'}
+            {'// MESSAGE_RECEIVED. TECHNICAL_REVIEW_QUEUED.'}
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -80,12 +85,12 @@ export default function DiagnosticForm() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.fieldLabel}>PROJECT_REQUIREMENTS</label>
-              <textarea className={styles.textarea} name="needs" placeholder="Briefly describe what you need, what exists today, and what result you want..." required />
+              <label className={styles.fieldLabel}>PROJECT_CONTEXT</label>
+              <textarea className={styles.textarea} name="needs" placeholder="What exists today, what is slowing the business down, and what outcome should improve?" required />
             </div>
 
             <button type="submit" className={styles.submitBtn} disabled={pending}>
-              {pending ? "TRANSMITTING..." : "SEND_MESSAGE"}
+              {pending ? "TRANSMITTING..." : "REQUEST_TECHNICAL_REVIEW"}
             </button>
           </form>
         )}

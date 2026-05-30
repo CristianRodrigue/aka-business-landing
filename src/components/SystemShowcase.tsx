@@ -10,6 +10,9 @@ export interface Project {
   title: string;
   description: string;
   metric: string;
+  status: string;
+  technologies: string[];
+  outcome: string;
   externalLink?: string;
   isSpecial?: boolean;
   fullDetails: {
@@ -30,6 +33,9 @@ const projects: Project[] = [
     isSpecial: true,
     description: "AI-powered interview simulation system replicating real technical pressure with dynamic voice interaction and contextual candidate analysis.",
     metric: "[ AI_SYSTEM: REAL_TIME_VOICE ]",
+    status: "LIVE PRODUCT",
+    technologies: ["Next.js", "Supabase", "Voice AI"],
+    outcome: "Interview practice with live feedback loops",
     externalLink: "https://www.tryverity.co/",
     fullDetails: {
       problem: "Professionals needed a way to train beyond static interview prep by facing real technical and behavioral pressure with dynamic conversational feedback.",
@@ -55,30 +61,14 @@ const projects: Project[] = [
     }
   },
   {
-    id: "02",
-    title: "DEMO PRO | SERVICE BUSINESS | US",
-    description: "Fast business web experience built for clear positioning, responsive browsing, and strong PageSpeed presentation.",
-    metric: "[ PERFORMANCE: 98/100 ]",
-    externalLink: "https://direct-demo-landing.vercel.app/",
-    fullDetails: {
-      problem: "The business needed a sharper web presence that could load quickly, communicate value clearly, and support lead-generation campaigns.",
-      solution: "Built a focused Next.js experience with optimized media, clear sections, and performance-first implementation for desktop and mobile users.",
-      stack: ["Next.js", "React", "Responsive UI", "Performance Tuning"],
-      metrics: [
-        { label: "Lighthouse Score", value: "98/100" },
-        { label: "Delivery", value: "Vercel" },
-        { label: "UX Focus", value: "Lead Flow" }
-      ],
-      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784658/2026-04-19_09-37-07_gt80kb.mp4",
-      pagespeedImg: "/pagespeed/pagespeed-demo-desktop.jpeg"
-    }
-  },
-  {
     id: "03",
     title: "AKA_SOUNDS | DIGITAL_PRODUCT_STORE",
     isSpecial: true,
     description: "Custom storefront for digital audio products, built around speed, payments, customer access, and secure file delivery.",
     metric: "[ LAUNCH: 21_DAY_SPRINT ]",
+    status: "LIVE STORE",
+    technologies: ["Paddle", "GCS", "Resend", "Next.js"],
+    outcome: "Direct sales flow with protected delivery",
     externalLink: "https://akasounds.com/",
     fullDetails: {
       problem: "Digital audio products needed a direct sales flow with catalog control, payment handling, customer communication, and protected downloads.",
@@ -94,10 +84,35 @@ const projects: Project[] = [
     }
   },
   {
+    id: "02",
+    title: "DEMO PRO | SERVICE BUSINESS | US",
+    description: "Fast business web experience built for clear positioning, responsive browsing, and strong PageSpeed presentation.",
+    metric: "[ PERFORMANCE: 98/100 ]",
+    status: "LIVE DEPLOYMENT",
+    technologies: ["Next.js", "React", "Vercel"],
+    outcome: "Sharper service positioning and lead flow",
+    externalLink: "https://direct-demo-landing.vercel.app/",
+    fullDetails: {
+      problem: "The business needed a sharper web presence that could load quickly, communicate value clearly, and support lead-generation campaigns.",
+      solution: "Built a focused Next.js experience with optimized media, clear sections, and performance-first implementation for desktop and mobile users.",
+      stack: ["Next.js", "React", "Responsive UI", "Performance Tuning"],
+      metrics: [
+        { label: "Lighthouse Score", value: "98/100" },
+        { label: "Delivery", value: "Vercel" },
+        { label: "UX Focus", value: "Lead Flow" }
+      ],
+      videoUrl: "https://res.cloudinary.com/drrx9rcec/video/upload/v1776784658/2026-04-19_09-37-07_gt80kb.mp4",
+      pagespeedImg: "/pagespeed/pagespeed-demo-desktop.jpeg"
+    }
+  },
+  {
     id: "04",
     title: "P4P | COMBAT_SPORTS_STORE",
     description: "E-commerce prototype for a combat sports brand, focused on strong visual direction and a smoother product browsing flow.",
     metric: "[ E-COMMERCE: UX_PROTOTYPE ]",
+    status: "PROTOTYPE",
+    technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
+    outcome: "Improved product browsing and brand trust",
     externalLink: "https://p4p-store.vercel.app/",
     fullDetails: {
       problem: "Product-heavy stores can feel generic, slow, or hard to browse, which weakens trust before a buyer reaches checkout.",
@@ -143,7 +158,7 @@ export default function SystemShowcase() {
           transition={{ duration: 0.8 }}
         >
           <span className={styles.label}>[ 03 // SELECTED_BUILDS ]</span>
-          <h2 className={styles.title}>FAST_WEB <br /> SYSTEMS</h2>
+          <h2 className={styles.title}>SYSTEMS WITH <br /> BUSINESS OUTCOMES</h2>
         </motion.div>
 
         <div className={styles.grid}>
@@ -158,8 +173,18 @@ export default function SystemShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
+              {project.isSpecial && <div className={styles.flagshipBadge}>FLAGSHIP_BUILD</div>}
               <motion.h3 layoutId={`title-${project.id}`} className={styles.projectTitle}>{project.title}</motion.h3>
               <motion.p layoutId={`desc-${project.id}`} className={styles.description}>{project.description}</motion.p>
+              <div className={styles.projectMeta}>
+                <span>{project.status}</span>
+                <span>{project.outcome}</span>
+              </div>
+              <div className={styles.techRow}>
+                {project.technologies.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
               <motion.span layoutId={`metric-${project.id}`} className={styles.metric}>{project.metric}</motion.span>
             </motion.div>
           ))}

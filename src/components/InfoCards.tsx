@@ -7,20 +7,23 @@ import styles from "./InfoCards.module.css";
 const CARDS = [
   {
     index: "// INDEX_01",
-    title: "RELIABLE FOUNDATIONS",
-    desc: "Clean, maintainable web systems built with sensible security, stable deployments, and fewer moving parts for the business to worry about.",
+    title: "FASTER WEBSITES",
+    desc: "High-performance pages that load quickly, explain the offer clearly, and reduce the friction between first visit and first contact.",
+    outcome: "Outcome: speed, clarity, trust",
     icon: Shield,
   },
   {
     index: "// INDEX_02",
-    title: "PERFORMANCE THAT SELLS",
-    desc: "Fast pages, clear user flows, and practical conversion improvements for visitors who need to understand, trust, and act quickly.",
+    title: "BUSINESS AUTOMATION",
+    desc: "Intake flows, customer actions, payments, notifications, and AI-assisted workflows designed to remove repetitive manual work.",
+    outcome: "Outcome: fewer manual steps",
     icon: Target,
   },
   {
     index: "// INDEX_03",
-    title: "AUTOMATION-READY DELIVERY",
-    desc: "Web platforms prepared for integrations, content workflows, payment flows, and AI-assisted operations as the business grows.",
+    title: "SCALABLE SYSTEMS",
+    desc: "Digital products built with maintainable foundations, stable deployment paths, and room for integrations as the company grows.",
+    outcome: "Outcome: reliable growth",
     icon: Zap,
   },
 ];
@@ -42,6 +45,7 @@ function Card({ card, i }: { card: typeof CARDS[0], i: number }) {
         </div>
         <h3 className={styles.cardTitle}>{card.title}</h3>
         <p className={styles.cardDesc}>{card.desc}</p>
+        <span className={styles.cardOutcome}>{card.outcome}</span>
       </div>
     </motion.div>
   );
@@ -52,7 +56,7 @@ export default function InfoCards() {
     <section className={styles.section}>
       <div className={styles.titleArea}>
         <p className={styles.subtitle}>{'// CORE_PROPOSITION'}</p>
-        <h2 className={styles.headline}>WHAT GETS BUILT</h2>
+        <h2 className={styles.headline}>WHAT AKA BUILDS</h2>
       </div>
       
       <div className={styles.grid}>

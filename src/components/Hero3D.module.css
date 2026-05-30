@@ -103,33 +103,63 @@
 .mainContent {
   margin-top: auto;
   margin-bottom: auto;
-  transform: translateY(-2vh);
-  pointer-events: none;
+  transform: translateY(8vh);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroKicker {
+  margin-bottom: 1.1rem;
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: clamp(3rem, 12vw, 9rem);
-  font-weight: 800;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.2rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0;
   color: var(--text-pure);
-  margin-bottom: 2rem;
+  margin: 0 0 1.5rem;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #fff 0%, #777 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.9;
+  text-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
 }
 
 .description {
-  max-width: 550px;
+  max-width: 720px;
   margin: 0 auto;
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--text-pure);
   line-height: 1.6;
-  letter-spacing: 0.08em;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding-left: 1.5rem;
+  letter-spacing: 0;
+  opacity: 0.86;
+  text-wrap: balance;
+}
+
+.ctaButton {
+  margin-top: 2rem;
+  padding: 1rem 1.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 .bottomRow {
   display: flex;
@@ -233,7 +263,17 @@
   }
 
   .title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
+  }
+
+  .heroKicker {
+    font-size: 0.56rem;
+    letter-spacing: 0.24em;
+  }
+
+  .description {
+    max-width: 34rem;
+    font-size: 0.95rem;
   }
 
   .bottomRow {

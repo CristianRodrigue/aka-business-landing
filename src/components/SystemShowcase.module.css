@@ -45,7 +45,7 @@
 
 .title {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.1;
   margin-top: 1.5rem;
   color: var(--text-pure);
@@ -53,12 +53,12 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
 .card {
-  background: var(--bg-surface);
+  background: #080808;
   border: var(--border-surgical);
   padding: 3rem 2.5rem;
   position: relative;
@@ -69,24 +69,32 @@
   gap: 2rem;
   height: auto;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .specialCard {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  grid-column: span 2;
+  min-height: 520px;
+  padding: 3.5rem;
+  background: #050505;
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 70px rgba(0, 0, 0, 0.55);
 }
 
 .specialCard::before {
   content: "";
   position: absolute;
-  top: -1px; left: -1px; right: -1px; bottom: -1px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: -1;
-  transition: opacity 0.5s ease;
+  inset: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  transition: border-color 0.5s ease, transform 0.5s ease;
 }
 
 .card:hover.specialCard::before {
-  opacity: 0;
+  border-color: rgba(0, 0, 0, 0.16);
+  transform: scale(0.985);
 }
 
 .card:hover {
@@ -96,13 +104,37 @@
 }
 
 .card:hover .projectTitle,
-.card:hover .description {
+.card:hover .description,
+.card:hover .projectMeta span,
+.card:hover .techRow span {
   color: #000000;
 }
 
 .card:hover .metric {
   color: #333333;
   border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .projectMeta,
+.card:hover .techRow span,
+.card:hover .flagshipBadge {
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.card:hover .flagshipBadge {
+  color: #000000;
+}
+
+.flagshipBadge {
+  width: fit-content;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--font-code);
+  font-size: 0.52rem;
+  color: #ffffff;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .projectTitle {
@@ -115,12 +147,63 @@
   transition: color 0.3s ease;
 }
 
+.specialCard .projectTitle {
+  font-size: clamp(1.35rem, 2.5vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.specialCard .description {
+  max-width: 34rem;
+  font-size: 1rem;
+}
+
 .description {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.8;
   font-family: var(--font-heading);
   transition: color 0.3s ease;
+}
+
+.projectMeta {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.projectMeta span:first-child {
+  font-family: var(--font-code);
+  font-size: 0.58rem;
+  color: #ffffff;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.projectMeta span:last-child {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.techRow span {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-code);
+  font-size: 0.52rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .metric {
@@ -167,6 +250,12 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .specialCard {
+    grid-column: span 1;
+    min-height: auto;
+    padding: 2rem 1.5rem;
   }
   
   .section {

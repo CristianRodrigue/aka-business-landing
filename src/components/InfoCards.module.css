@@ -1,5 +1,5 @@
 .section {
-  padding: 10rem 2rem;
+  padding: 11rem 2rem 10rem;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -14,15 +14,16 @@
 .subtitle {
   font-family: var(--font-code);
   font-size: 0.7rem;
-  color: var(--text-dark);
+  color: var(--text-muted);
   letter-spacing: 0.4em;
   margin-bottom: 1rem;
 }
 
 .headline {
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
+  color: var(--text-pure);
 }
 
 .grid {
@@ -35,13 +36,13 @@
 
 .card {
   position: relative;
-  background: var(--bg-surface);
+  background: #080808;
   border: var(--border-surgical);
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 480px;
+  min-height: 430px;
   transition: var(--transition-surgical);
   cursor: pointer;
   overflow: hidden;
@@ -55,7 +56,7 @@
 .cardIndex {
   font-family: var(--font-code);
   font-size: 0.6rem;
-  color: var(--text-dark);
+  color: var(--text-muted);
   letter-spacing: 0.2em;
 }
 
@@ -65,7 +66,7 @@
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -73,9 +74,21 @@
 }
 
 .cardDesc {
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.cardOutcome {
+  display: block;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-code);
+  font-size: 0.62rem;
+  color: #ffffff;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {

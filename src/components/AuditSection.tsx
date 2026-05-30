@@ -17,9 +17,9 @@ export default function AuditSection() {
           <span className={styles.label}>{'// PERFORMANCE_AUDIT'}</span>
           <h2 className={styles.headline}>PERFORMANCE <br /> ENGINEERING</h2>
           <p className={styles.description}>
-            Technical review of speed, UX friction, content structure, and delivery flow. 
-            The goal is simple: find what slows users down, fix what matters, and make 
-            the digital experience feel sharper.
+            A technical review of load speed, Core Web Vitals, UX friction, content structure, 
+            and conversion paths. The goal is simple: identify what slows users down, prioritize 
+            what matters, and turn the site into a sharper business system.
           </p>
         </motion.div>
 
@@ -32,7 +32,35 @@ export default function AuditSection() {
         >
           <div className={styles.videoInner}>
             <div className={styles.scanLine} />
-            <span className={styles.infoText}>PERFORMANCE_REVIEW: 2026</span>
+            <div className={styles.auditHeader}>
+              <span className={styles.infoText}>PERFORMANCE_REVIEW: 2026</span>
+              <span className={styles.auditStatus}>DIAGNOSTIC_READY</span>
+            </div>
+            <div className={styles.metricGrid}>
+              <div className={styles.metricCell}>
+                <strong>98</strong>
+                <span>Target Score</span>
+              </div>
+              <div className={styles.metricCell}>
+                <strong>&lt;1.8s</strong>
+                <span>LCP Goal</span>
+              </div>
+              <div className={styles.metricCell}>
+                <strong>0</strong>
+                <span>Critical Flow Blocks</span>
+              </div>
+              <div className={styles.metricCell}>
+                <strong>24h</strong>
+                <span>Audit Window</span>
+              </div>
+            </div>
+            <div className={styles.architectureLine}>
+              <span>TRAFFIC</span>
+              <i />
+              <span>INTERFACE</span>
+              <i />
+              <span>CONVERSION</span>
+            </div>
           </div>
         </motion.div>
       </div>

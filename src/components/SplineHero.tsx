@@ -140,7 +140,7 @@ export default function SplineHero() {
             </div>
 
             <div className={styles.mainContent}>
-              {/* Centro - El clic ocurre dentro del componente Spline */}
+              {/* Centro reservado para la escena 3D. */}
             </div>
 
             <div className={styles.bottomRow}>

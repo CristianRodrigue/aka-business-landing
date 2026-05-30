@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Music2 } from "lucide-react";
 import styles from "./FounderSection.module.css";
 
 export default function FounderSection() {
@@ -36,17 +37,22 @@ export default function FounderSection() {
         >
           <span className={styles.label}>[ FOUNDING_ARCHITECT_LOG ]</span>
           <h2 className={styles.quote}>
-            &quot;SOLID INFRASTRUCTURE. FLYING IDEAS. ALL IN ONE PLACE.&quot;
+            TECHNICAL CONSULTING FOR DIGITAL SYSTEMS THAT NEED TO WORK.
           </h2>
+          <div className={styles.credentials}>
+            <span>Systems Engineer</span>
+            <span>COPNIA Registered</span>
+            <span>Full-Stack Delivery</span>
+          </div>
           <p className={styles.bio}>
-            I build fast, reliable digital systems for businesses that need a stronger web presence, cleaner 
-            workflows, and practical automation. My focus is simple: clear strategy, solid execution, and products 
-            that feel polished when real clients use them.
+            I work with businesses that need stronger web infrastructure, cleaner workflows, and practical 
+            automation. The focus is technical clarity: understand the operation, design the system, ship the 
+            interface, and keep the foundation maintainable after launch.
           </p>
           <div className={styles.signature}>
             <span className={styles.name}>CHRISTIAN CAMILO</span>
             <div className={styles.contactBlock}>
-              <span className={styles.role}>FOUNDER // FULL-STACK DEVELOPER</span>
+              <span className={styles.role}>FOUNDER // SYSTEMS ARCHITECT // FULL-STACK DEVELOPER</span>
               <a href="mailto:christian@akabusiness.tech" className={styles.emailLink}>
                 christian@akabusiness.tech
               </a>
@@ -57,6 +63,12 @@ export default function FounderSection() {
               </a>
               <a href="https://www.linkedin.com/in/christian-camilo-dev" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://x.com/deat_aka" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="X / Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2h3.7l-8.1 9.3L24 22h-7.4l-5.8-7.6L4.1 22H.4l8.7-10L0 2h7.6l5.2 6.9L18.9 2Zm-1.3 18.1h2L6.5 3.8H4.3l13.3 16.3Z"/></svg>
+              </a>
+              <a href="https://akasounds.com/#/deat_aka" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="AKA Sounds artist profile">
+                <Music2 size={18} strokeWidth={1.8} />
               </a>
               <Link href="/curriculum" className={styles.socialIcon} aria-label="Curriculum Vitae">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
